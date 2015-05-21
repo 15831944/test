@@ -1,0 +1,154 @@
+
+#content-main {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background: #fafafa;
+    border: solid 1px #ddd;
+    padding-bottom: 20px;
+}
+
+    #content-main > .col-box {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    #content-main > .col-lft {
+        left: 0;
+        width: 300px;
+        border-right: solid 1px #ddd;
+    }
+
+    #content-main > .col-mid {
+        left: 300px;
+        width: 400px;
+        border-right: solid 1px #ddd;
+    }
+
+    #content-main > .col-rig {
+        left: 700px;
+        right: 0;
+        right: 0;
+    }
+
+    #content-main > .col-box > h3 {
+        margin: 0 15px 0 15px;
+        padding: 10px 0;
+        border-bottom: solid 3px #ccc;
+        color: #333;
+        font-size: 14px;
+        height: auto;
+    }
+
+    #content-main .content {
+        padding: 15px;
+        min-height: 400px;
+    }
+
+    #content-main > .col-box > h3 > .action-area {
+        position: absolute;
+        top: 8px;
+        right: 15px;
+    }
+
+.custom_type-form .row {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+}
+
+    .custom_type-form .row label {
+        line-height: 25px;
+        width: 80px;
+        margin-bottom: 0;
+    }
+
+    .custom_type-form .row input {
+        width: 140px;
+    }
+
+#attribute-group-tree, .ebox-area {
+    border: solid 1px #ddd;
+    height: 410px;
+    background: #fff;
+    padding: 10px;
+    overflow: auto;
+}
+
+#attribute_edit_form input, #attribute_edit_form select {
+    width: 100%;
+}
+
+#attribute_edit_form table {
+    border-collapse: collapse;
+    border: none;
+    width: 200px;
+}
+
+#attribute_edit_form td {
+    border: solid #ccc 1px;
+    padding: 3px 5px;
+    border: solid #ccc 1px;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+}
+
+    #attribute_edit_form td.lft {
+        border-right-width: 1px;
+    }
+
+    #attribute_edit_form td > * {
+        margin: 0;
+        box-shadow: 0 0 0;
+    }
+
+        #attribute_edit_form td > *:focus {
+            outline: none;
+        }
+
+    #attribute_edit_form td > input {
+        width: 96%;
+    }
+
+.ebox-area .attr_form_item_data-source {
+    display: none;
+}
+
+.has-data-source .attr_form_item_data-source {
+    display: table-row;
+}
+
+.ebox-area .attr_form_item_translation {
+    display: none;
+}
+
+.has-translation .attr_form_item_translation {
+    display: table-row;
+}
+
+
+.jstree-classic a .jstree-icon {
+    background: url(/images/tree/folder.gif) no-repeat;
+}
+
+.jstree-classic .jstree-open > a .jstree-icon {
+    background: url(/images/tree/folder-open.gif) no-repeat;
+}
+
+.jstree-classic .jstree-hovered {
+    border-color: transparent;
+    background: transparent;
+}
+
+.jstree-classic .jstree-clicked {
+    border-color: transparent;
+    background: #ddd;
+    color: #000;
+    font-weight: bold;
+}
+
+.jstree-classic .jstree-leaf[rel=attribute] > a .jstree-icon {
+    background-image: url(/images/tree/fam_application_form_delete.png);
+}

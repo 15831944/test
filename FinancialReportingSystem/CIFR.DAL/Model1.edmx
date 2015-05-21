@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CIFRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="ConfigCode" />
+          </Key>
+          <Property Name="ConfigCode" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="ConfigName" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="ConfigValue" Type="nvarchar" MaxLength="4000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Managers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="ManagerAccount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManagerPassword" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsLock" Type="bit" Nullable="false" />
+          <Property Name="LastVisitTime" Type="datetime" />
+          <Property Name="TestSiteCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TestSite">
+          <Key>
+            <PropertyRef Name="TestSiteId" />
+          </Key>
+          <Property Name="TestSiteId" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="TestSiteName" Type="nvarchar" MaxLength="32" />
+          <Property Name="TestSiteCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Updated" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="CIFRModelStoreContainer">
+          <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Managers" EntityType="Self.Managers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestSite" EntityType="Self.TestSite" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CIFRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="ConfigCode" />
+          </Key>
+          <Property Name="ConfigCode" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConfigName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConfigValue" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Configs" EntityType="Self.Config" />
+          <EntitySet Name="TestSites" EntityType="CIFRModel.TestSite" />
+          <EntitySet Name="Managers" EntityType="CIFRModel.Manager" />
+        </EntityContainer>
+        <EntityType Name="TestSite">
+          <Key>
+            <PropertyRef Name="TestSiteId" />
+          </Key>
+          <Property Name="TestSiteId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="TestSiteName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="TestSiteCode" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerAccount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ManagerPassword" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsLock" Type="Boolean" Nullable="false" />
+          <Property Name="LastVisitTime" Type="DateTime" Precision="3" />
+          <Property Name="TestSiteCode" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Updated" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CIFRModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Configs">
+            <EntityTypeMapping TypeName="CIFRModel.Config">
+              <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="ConfigCode" ColumnName="ConfigCode" />
+                <ScalarProperty Name="ConfigName" ColumnName="ConfigName" />
+                <ScalarProperty Name="ConfigValue" ColumnName="ConfigValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestSites">
+            <EntityTypeMapping TypeName="CIFRModel.TestSite">
+              <MappingFragment StoreEntitySet="TestSite">
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="TestSiteCode" ColumnName="TestSiteCode" />
+                <ScalarProperty Name="TestSiteName" ColumnName="TestSiteName" />
+                <ScalarProperty Name="TestSiteId" ColumnName="TestSiteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Managers">
+            <EntityTypeMapping TypeName="CIFRModel.Manager">
+              <MappingFragment StoreEntitySet="Managers">
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="TestSiteCode" ColumnName="TestSiteCode" />
+                <ScalarProperty Name="LastVisitTime" ColumnName="LastVisitTime" />
+                <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+                <ScalarProperty Name="ManagerPassword" ColumnName="ManagerPassword" />
+                <ScalarProperty Name="ManagerAccount" ColumnName="ManagerAccount" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

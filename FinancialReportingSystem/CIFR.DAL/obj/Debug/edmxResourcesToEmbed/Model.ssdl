@@ -1,0 +1,2086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Institution_id" Type="nvarchar" MaxLength="36" />
+    <Property Name="Card_Id" Type="nvarchar" MaxLength="36" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VerificationCode" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="32" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" />
+    <Property Name="LastLockoutDate" Type="datetime" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="AccountType" Type="int" />
+    <Property Name="MemOrInstitutionNO" Type="nvarchar" MaxLength="32" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CurrentLoginDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InstitutionId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ActivityName" Type="varchar" MaxLength="200" />
+    <Property Name="ActivityTime" Type="varchar" MaxLength="200" />
+    <Property Name="ActivityInfo" Type="text" />
+    <Property Name="IsPublished" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="36" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="36" />
+    <Property Name="ModifyDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Advertisement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ADTypeID" Type="int" />
+    <Property Name="AD_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="Links" Type="nvarchar" MaxLength="255" />
+    <Property Name="Image" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsOpen" Type="bit" Nullable="false" />
+    <Property Name="Contacts" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="11" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="AdPlacement" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Advertisement_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ADName" Type="nvarchar" MaxLength="36" />
+    <Property Name="ADWidth" Type="int" />
+    <Property Name="ADHeight" Type="int" />
+    <Property Name="ADDescription" Type="nvarchar" MaxLength="128" />
+    <Property Name="ADTemplate" Type="text" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InstitutionId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="AnnouncementTitle" Type="varchar" MaxLength="200" />
+    <Property Name="AnnouncementInfo" Type="text" />
+    <Property Name="IsPublished" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="36" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="36" />
+    <Property Name="ModifyDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="AppointmentNo" Type="nvarchar" MaxLength="36" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="DepartmentID" Type="nvarchar" MaxLength="36" />
+    <Property Name="DoctorID" Type="nvarchar" MaxLength="36" />
+    <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
+    <Property Name="SetTimeId" Type="nvarchar" MaxLength="36" />
+    <Property Name="CardID" Type="nvarchar" MaxLength="36" />
+    <Property Name="ItemIDs" Type="nvarchar" MaxLength="64" />
+    <Property Name="SymptomsName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="TimeSection" Type="int" />
+    <Property Name="AppointmentType" Type="int" Nullable="false" />
+    <Property Name="Operater" Type="int" />
+    <Property Name="CancelReason" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="11" />
+    <Property Name="InstitutionState" Type="int" />
+    <Property Name="ReservationCode" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="IsNoCard" Type="bit" Nullable="false" />
+    <Property Name="MemberId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="AppointmentMoney" Type="money" />
+    <Property Name="OtherInfo" Type="nvarchar" MaxLength="500" />
+    <Property Name="AppDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppointmentsPatients">
+    <Key>
+      <PropertyRef Name="AppointmentId" />
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="AppointmentId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="PatientId" Type="nvarchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppointmentStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="StateTxt" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityID" Type="bigint" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Associate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="SourceID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="TargetID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="AssociatType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ServerFolder" Type="nvarchar" MaxLength="64" />
+    <Property Name="InnerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AttachFileType" Type="nvarchar" MaxLength="25" />
+    <Property Name="InstitutionId" Type="nvarchar" MaxLength="36" />
+    <Property Name="CombinePath" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BrowserLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="accountId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InstitutionId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="CardNo" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CardType" Type="int" Nullable="false" />
+    <Property Name="Owners" Type="nvarchar" MaxLength="16" />
+    <Property Name="Valid" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="16" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+    <Property Name="ProvinceID" Type="bigint" />
+    <Property Name="CityID" Type="bigint" />
+    <Property Name="AreaID" Type="bigint" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="36" />
+    <Property Name="StartValid" Type="datetime" />
+    <Property Name="BindingTime" Type="datetime" />
+    <Property Name="IsUsed" Type="int" />
+    <Property Name="IsDel" Type="int" />
+  </EntityType>
+  <EntityType Name="CardTypeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="CardTypeID" Type="int" Nullable="false" />
+    <Property Name="UseDescription" Type="text" />
+    <Property Name="CardUrl" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" />
+    <Property Name="ItemIDs" Type="nvarchar" MaxLength="64" />
+    <Property Name="IsGuess" Type="bit" />
+    <Property Name="IsTake" Type="bit" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProvinceID" Type="bigint" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="ConfigCode" />
+    </Key>
+    <Property Name="ConfigCode" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ConfigName" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="ConfigValue" Type="nvarchar" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataDictionary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="Isvalid" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsSystem" Type="bit" />
+  </EntityType>
+  <EntityType Name="DataDictionaryType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HelpCenter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="HelpCenterType_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Content" Type="text" />
+    <Property Name="IsShow" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" Nullable="false" />
+    <Property Name="IsMember" Type="bit" Nullable="false" />
+    <Property Name="ParentTypeId" Type="nvarchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HelpCenterType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="OnanId" Type="nvarchar" MaxLength="36" />
+    <Property Name="LevelId" Type="int" Nullable="false" />
+    <Property Name="SortIndex" Type="int" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="IsMember" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InfoType_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Content" Type="text" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClickRate" Type="int" />
+    <Property Name="IsHeadlines" Type="bit" />
+    <Property Name="IsImage" Type="bit" />
+    <Property Name="Image" Type="nvarchar" MaxLength="64" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsHot" Type="bit" />
+    <Property Name="CommentId" Type="nvarchar" MaxLength="36" />
+    <Property Name="CommentTime" Type="datetime" />
+    <Property Name="CommenNumber" Type="int" />
+    <Property Name="IsShow" Type="bit" />
+    <Property Name="IsAudit" Type="bit" />
+    <Property Name="State" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="IsSysInfo" Type="bit" />
+  </EntityType>
+  <EntityType Name="InfoComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Info_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="CommentContent" Type="text" />
+    <Property Name="CommentTime" Type="datetime" />
+    <Property Name="CommentIP" Type="nvarchar" MaxLength="16" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InfoType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="OnanId" Type="nvarchar" MaxLength="36" />
+    <Property Name="LevelId" Type="int" Nullable="false" />
+    <Property Name="SortIndex" Type="int" />
+    <Property Name="Remark" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Institution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InstitutionName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="InstitutionCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="InstitutionManagerAccount" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Classification" Type="int" Nullable="false" />
+    <Property Name="Recommend" Type="int" />
+    <Property Name="IntroductionInfo" Type="ntext" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="128" />
+    <Property Name="AddressOtherInfomaition" Type="text" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="16" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="30" />
+    <Property Name="DoctorNumber" Type="int" />
+    <Property Name="Nurses" Type="int" />
+    <Property Name="BusinessLicense" Type="nvarchar" MaxLength="255" />
+    <Property Name="Paperwork" Type="nvarchar" MaxLength="255" />
+    <Property Name="Contract" Type="nvarchar" MaxLength="255" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="ProvinceCode" Type="bigint" />
+    <Property Name="CityCode" Type="bigint" />
+    <Property Name="AreaCode" Type="bigint" />
+    <Property Name="Equipment" Type="varchar" MaxLength="100" />
+    <Property Name="Facility" Type="varchar" MaxLength="100" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
+    <Property Name="SpecificLocation" Type="nvarchar" MaxLength="255" />
+    <Property Name="TrafficEnvironment" Type="varchar" MaxLength="8000" />
+    <Property Name="TreatmentProject" Type="varchar" MaxLength="8000" />
+    <Property Name="VideoFile" Type="nvarchar" MaxLength="255" />
+    <Property Name="InstitutionNumber" Type="nvarchar" MaxLength="32" />
+    <Property Name="PublicPhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="WebSiteUrl" Type="varchar" MaxLength="100" />
+    <Property Name="InstitutionProperty" Type="varchar" MaxLength="50" />
+    <Property Name="NearByBusLine" Type="varchar" MaxLength="2000" />
+    <Property Name="NearBySubWay" Type="varchar" MaxLength="500" />
+    <Property Name="PublicEmail" Type="varchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="WeChatAccount" Type="varchar" MaxLength="100" />
+    <Property Name="WeChatCode" Type="varchar" MaxLength="100" />
+    <Property Name="Procedure" Type="text" />
+    <Property Name="Notice" Type="text" />
+    <Property Name="IsFirstLogin" Type="bit" />
+    <Property Name="IsFreeze" Type="bit" />
+    <Property Name="Coordinate" Type="varchar" MaxLength="50" />
+    <Property Name="ReservationRules" Type="varchar" MaxLength="2000" />
+    <Property Name="Score" Type="float" />
+  </EntityType>
+  <EntityType Name="Institution_Advantages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="InstitutionId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Content" Type="text" />
+    <Property Name="Picture" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Institution_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="ManDept_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Institution_Doctor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobPosition" Type="nchar" MaxLength="10" />
+    <Property Name="Introduction" Type="text" />
+    <Property Name="Photo" Type="varchar" MaxLength="100" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Educational" Type="varchar" MaxLength="8" />
+    <Property Name="Sex" Type="int" Nullable="false" />
+    <Property Name="Certificate" Type="nvarchar" MaxLength="255" />
+    <Property Name="Graduated" Type="nvarchar" MaxLength="64" />
+    <Property Name="Interest" Type="nvarchar" MaxLength="255" />
+    <Property Name="Specialty" Type="text" />
+  </EntityType>
+  <EntityType Name="Institution_Doctor_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Doct_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="Dept_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Institution_Doctor_Treatment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Doct_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Treat_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="Dept_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Institution_EquipmentPicture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="InstitutionId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Picture" Type="varchar" MaxLength="100" />
+    <Property Name="Introduce" Type="varchar" MaxLength="200" />
+    <Property Name="Text" Type="text" />
+  </EntityType>
+  <EntityType Name="Institution_Indications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Ins_Id" Type="nvarchar" MaxLength="36" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="ManIndi_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InsTreat_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Institution_Scheduling">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="SchedulingTime" Type="datetime" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" Nullable="false" />
+    <Property Name="Doctor_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="16" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Remark" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Institution_SetTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="MorningStartTime" Type="datetime" Nullable="false" />
+    <Property Name="MorningEndTime" Type="datetime" Nullable="false" />
+    <Property Name="MorningLimitAppointmentCount" Type="int" Nullable="false" />
+    <Property Name="MorningIsClosed" Type="bit" Nullable="false" />
+    <Property Name="NoonStartTime" Type="datetime" Nullable="false" />
+    <Property Name="NoonEndTime" Type="datetime" Nullable="false" />
+    <Property Name="NoonLimitAppointmentCount" Type="int" Nullable="false" />
+    <Property Name="NoonIsClosed" Type="bit" Nullable="false" />
+    <Property Name="NightStartTime" Type="datetime" Nullable="false" />
+    <Property Name="NightEndTime" Type="datetime" Nullable="false" />
+    <Property Name="NightLimitAppointmentCount" Type="int" Nullable="false" />
+    <Property Name="NightIsClosed" Type="bit" Nullable="false" />
+    <Property Name="EarlyCancelHour" Type="int" Nullable="false" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="16" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Remark" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Institution_Symptoms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="ManSym_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InsIndi_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Institution_Treatment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="ManTreat_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="InsDept_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Manage_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="State" Type="bit" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="DeptType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Manage_Indications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Dept_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Treat_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="State" Type="bit" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Manage_Symptoms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Dept_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Treat_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Indi_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="State" Type="bit" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Source" Type="int" Nullable="false" />
+    <Property Name="IsAudit" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="Manage_Treatment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Dept_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="State" Type="bit" Nullable="false" />
+    <Property Name="Account_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="ManagerRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Managers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagerAccount" Type="varchar" MaxLength="50" />
+    <Property Name="ManagerPassword" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsReadOnly" Type="bit" />
+    <Property Name="LastVisitTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ManagersToManagerRoles">
+    <Key>
+      <PropertyRef Name="ManagerId" />
+      <PropertyRef Name="ManagerRoleId" />
+    </Key>
+    <Property Name="ManagerId" Type="int" Nullable="false" />
+    <Property Name="ManagerRoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Account_id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="16" />
+    <Property Name="IDCard" Type="nvarchar" MaxLength="18" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="WorkUnit" Type="nvarchar" MaxLength="64" />
+    <Property Name="Address" Type="nvarchar" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="ProvinceCode" Type="bigint" />
+    <Property Name="CityCode" Type="bigint" />
+    <Property Name="AreaCode" Type="bigint" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="Nickname" Type="nvarchar" MaxLength="16" />
+    <Property Name="HeadPortrait" Type="nvarchar" MaxLength="255" />
+    <Property Name="MemberNo" Type="nvarchar" MaxLength="32" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="Points" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="MemberLevel" Type="int" />
+    <Property Name="IsAudit" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Reviewer" Type="nvarchar" MaxLength="36" />
+    <Property Name="AuditTime" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="36" />
+    <Property Name="OperatTime" Type="datetime" />
+    <Property Name="FreezeStartTime" Type="datetime" />
+    <Property Name="FreezeEndTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Member_Advisory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Content" Type="text" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="16" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="IsReply" Type="bit" />
+    <Property Name="ReplyDate" Type="datetime" />
+    <Property Name="ReplyName" Type="varchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Member_BackgroundImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="BackgroundImage" Type="nvarchar" MaxLength="255" />
+    <Property Name="TwoDimenCodeImage" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Member_Complaints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Ins_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="AppointmentID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ComplaintsNo" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Content" Type="text" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="16" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="IsHandle" Type="bit" />
+    <Property Name="HandleDate" Type="datetime" />
+    <Property Name="HandleName" Type="varchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Member_Evaluation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Ins_Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="AppointmentID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="WaitingTime" Type="int" Nullable="false" />
+    <Property Name="Efficacy" Type="int" Nullable="false" />
+    <Property Name="Attitude" Type="int" Nullable="false" />
+    <Property Name="Experience" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="GuidDoctorService" Type="int" Nullable="false" />
+    <Property Name="MemberUseful" Type="text" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member_Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MemberId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="IsRead" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member_Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="16" />
+    <Property Name="Relationship" Type="int" />
+    <Property Name="IDCard" Type="nvarchar" MaxLength="18" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="128" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="ProvinceID" Type="bigint" />
+    <Property Name="CityID" Type="bigint" />
+    <Property Name="AreaID" Type="bigint" />
+    <Property Name="MedicareCard" Type="nvarchar" MaxLength="32" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="MemberNo" Type="nvarchar" MaxLength="32" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="IsDel" Type="int" />
+  </EntityType>
+  <EntityType Name="Member_Points">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="PointsTypeID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Scores" Type="int" />
+    <Property Name="CurrentPoints" Type="int" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="MemberNo" Type="nvarchar" MaxLength="32" />
+    <Property Name="ExpirationDate" Type="datetime" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ParentMenuId" Type="nvarchar" MaxLength="36" />
+    <Property Name="MenuName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MenuICO" Type="nvarchar" MaxLength="50" />
+    <Property Name="MenuUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="MenuType" Type="int" />
+    <Property Name="MenuOrder" Type="int" />
+    <Property Name="IsSystem" Type="bit" />
+    <Property Name="IsVisible" Type="bit" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“JCK.dbo.NoTemplateRecord”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="NoTemplateRecord">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+      <PropertyRef Name="CurrentIndex" />
+    </Key>
+    <Property Name="TypeCode" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CurrentIndex" Type="int" Nullable="false" />
+    <Property Name="LastGetTime" Type="date" />
+  </EntityType>
+  <EntityType Name="OrdersMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="TypeId" Type="nvarchar" MaxLength="36" />
+    <Property Name="AppointmentId" Type="nvarchar" MaxLength="36" />
+    <Property Name="AppointmentNo" Type="nvarchar" MaxLength="36" />
+    <Property Name="InsId" Type="nvarchar" MaxLength="36" />
+    <Property Name="MemberId" Type="nvarchar" MaxLength="36" />
+    <Property Name="InsIsRead" Type="bit" />
+    <Property Name="MemberIsRead" Type="bit" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="IsHandle" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="InsUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OrdersMessage_Manager">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MessageId" Type="nvarchar" MaxLength="36" />
+    <Property Name="AccountId" Type="int" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OrdersMessage_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="Points_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="PointsType" Type="int" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="255" />
+    <Property Name="Scores" Type="int" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvinceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReservationCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="AppointmentID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="MemberID" Type="nvarchar" MaxLength="36" />
+    <Property Name="INS_Id" Type="nvarchar" MaxLength="36" />
+    <Property Name="RCode" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="RoleToModule">
+    <Key>
+      <PropertyRef Name="ManagerRoleId" />
+      <PropertyRef Name="ModuleId" />
+    </Key>
+    <Property Name="ManagerRoleId" Type="int" Nullable="false" />
+    <Property Name="ModuleId" Type="int" Nullable="false" />
+    <Property Name="HasPermission" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="SysGuidence">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NodeName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="SortIndex" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="UpdateTime" Type="datetime" />
+    <Property Name="Action" Type="nvarchar" MaxLength="25" />
+    <Property Name="RoleType" Type="int" />
+  </EntityType>
+  <EntityType Name="VerificationRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+    <Property Name="VerificationCode" Type="nvarchar" MaxLength="16" />
+    <Property Name="SourceID" Type="nvarchar" MaxLength="36" />
+    <Property Name="SendTime" Type="datetime" />
+    <Property Name="VerificationTime" Type="datetime" />
+    <Property Name="VerificationType" Type="int" />
+    <Property Name="Results" Type="int" />
+  </EntityType>
+  <Association Name="FK_ACCOUNT_REFERENCE_CARD">
+    <End Role="Card" Type="Self.Card" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Card">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Card_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACCOUNT_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Institution_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Activity_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ADVERTIS_REFERENCE_ADVERTISTYPE1">
+    <End Role="Advertisement_Type" Type="Self.Advertisement_Type" Multiplicity="0..1" />
+    <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Advertisement_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="ADTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ADVERTIS1_REFERENCE_ADVERTIS3">
+    <End Role="Advertising" Type="Self.Advertising" Multiplicity="1" />
+    <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Advertising">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="AD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Announcement_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Announcement">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Appointment">
+    <End Role="Institution_SetTime" Type="Self.Institution_SetTime" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_SetTime">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="SetTimeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_AppointmentStatus">
+    <End Role="AppointmentStatus" Type="Self.AppointmentStatus" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppointmentStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="State" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Card">
+    <End Role="Card" Type="Self.Card" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Card">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="CardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Institution_Department">
+    <End Role="Institution_Department" Type="Self.Institution_Department" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Institution_Doctor">
+    <End Role="Institution_Doctor" Type="Self.Institution_Doctor" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Member">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppointmentsPatients_Appointment">
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="1" />
+    <End Role="AppointmentsPatients" Type="Self.AppointmentsPatients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppointmentsPatients">
+        <PropertyRef Name="AppointmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppointmentsPatients_Member_Patient">
+    <End Role="Member_Patient" Type="Self.Member_Patient" Multiplicity="1" />
+    <End Role="AppointmentsPatients" Type="Self.AppointmentsPatients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member_Patient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppointmentsPatients">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachment_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="0..1" />
+    <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BrowserLog_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="BrowserLog" Type="Self.BrowserLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BrowserLog">
+        <PropertyRef Name="accountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BrowserLog_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="BrowserLog" Type="Self.BrowserLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BrowserLog">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DATADICT_REFERENCE_DATADICT">
+    <End Role="DataDictionaryType" Type="Self.DataDictionaryType" Multiplicity="1" />
+    <End Role="DataDictionary" Type="Self.DataDictionary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataDictionaryType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="DataDictionary">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dept_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Institution_Department" Type="Self.Institution_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Department">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dept_REFERENCE_MANAGE_D">
+    <End Role="Manage_Department" Type="Self.Manage_Department" Multiplicity="1" />
+    <End Role="Institution_Department" Type="Self.Institution_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Department">
+        <PropertyRef Name="ManDept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doct_REFERENCE_Dept1">
+    <End Role="Institution_Doctor" Type="Self.Institution_Doctor" Multiplicity="1" />
+    <End Role="Institution_Doctor_Department" Type="Self.Institution_Doctor_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Department">
+        <PropertyRef Name="Doct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctDept_REFERENCE_Dept1">
+    <End Role="Institution_Department" Type="Self.Institution_Department" Multiplicity="1" />
+    <End Role="Institution_Doctor_Department" Type="Self.Institution_Doctor_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Department">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Institution_Doctor" Type="Self.Institution_Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Doctor">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctTreat_REFERENCE_DoctDept">
+    <End Role="Institution_Doctor_Department" Type="Self.Institution_Doctor_Department" Multiplicity="1" />
+    <End Role="Institution_Doctor_Treatment" Type="Self.Institution_Doctor_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Treatment">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctTreat_REFERENCE_Docto">
+    <End Role="Institution_Doctor" Type="Self.Institution_Doctor" Multiplicity="1" />
+    <End Role="Institution_Doctor_Treatment" Type="Self.Institution_Doctor_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Treatment">
+        <PropertyRef Name="Doct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctTreat_REFERENCE_Treat">
+    <End Role="Institution_Treatment" Type="Self.Institution_Treatment" Multiplicity="1" />
+    <End Role="Institution_Doctor_Treatment" Type="Self.Institution_Doctor_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Treatment">
+        <PropertyRef Name="Treat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HELPCENT_REFERENCE_HELPCENT">
+    <End Role="HelpCenterType" Type="Self.HelpCenterType" Multiplicity="1" />
+    <End Role="HelpCenter" Type="Self.HelpCenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HelpCenterType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HelpCenter">
+        <PropertyRef Name="HelpCenterType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Indi_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="0..1" />
+    <End Role="Institution_Indications" Type="Self.Institution_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Indications">
+        <PropertyRef Name="Ins_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Indi_REFERENCE_MANAGE_I">
+    <End Role="Manage_Indications" Type="Self.Manage_Indications" Multiplicity="1" />
+    <End Role="Institution_Indications" Type="Self.Institution_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Indications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Indications">
+        <PropertyRef Name="ManIndi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Indi_REFERENCE_Treat">
+    <End Role="Institution_Treatment" Type="Self.Institution_Treatment" Multiplicity="1" />
+    <End Role="Institution_Indications" Type="Self.Institution_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Indications">
+        <PropertyRef Name="InsTreat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INFO_REFERENCE_INFOTYPE">
+    <End Role="InfoType" Type="Self.InfoType" Multiplicity="1" />
+    <End Role="Info" Type="Self.Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Info">
+        <PropertyRef Name="InfoType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INFOCOMM_REFERENCE_INFO">
+    <End Role="Info" Type="Self.Info" Multiplicity="1" />
+    <End Role="InfoComment" Type="Self.InfoComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoComment">
+        <PropertyRef Name="Info_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSTITUT_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="0..1" />
+    <End Role="Institution_SetTime" Type="Self.Institution_SetTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_SetTime">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institution_Advantages_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Institution_Advantages" Type="Self.Institution_Advantages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Advantages">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institution_Equipment_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Institution_EquipmentPicture" Type="Self.Institution_EquipmentPicture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_EquipmentPicture">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_I_REFERENCE_MANAGE_D">
+    <End Role="Manage_Department" Type="Self.Manage_Department" Multiplicity="1" />
+    <End Role="Manage_Indications" Type="Self.Manage_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Indications">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_I_REFERENCE_MANAGE_T">
+    <End Role="Manage_Treatment" Type="Self.Manage_Treatment" Multiplicity="1" />
+    <End Role="Manage_Indications" Type="Self.Manage_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Indications">
+        <PropertyRef Name="Treat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_S_REFERENCE_MANAGE_D">
+    <End Role="Manage_Department" Type="Self.Manage_Department" Multiplicity="1" />
+    <End Role="Manage_Symptoms" Type="Self.Manage_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Symptoms">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_S_REFERENCE_MANAGE_I">
+    <End Role="Manage_Indications" Type="Self.Manage_Indications" Multiplicity="1" />
+    <End Role="Manage_Symptoms" Type="Self.Manage_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Indications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Symptoms">
+        <PropertyRef Name="Indi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_S_REFERENCE_MANAGE_T">
+    <End Role="Manage_Treatment" Type="Self.Manage_Treatment" Multiplicity="1" />
+    <End Role="Manage_Symptoms" Type="Self.Manage_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Symptoms">
+        <PropertyRef Name="Treat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_T_REFERENCE_MANAGE_D">
+    <End Role="Manage_Department" Type="Self.Manage_Department" Multiplicity="1" />
+    <End Role="Manage_Treatment" Type="Self.Manage_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Treatment">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagersToManagerRoles_ManagerRoles">
+    <End Role="ManagerRoles" Type="Self.ManagerRoles" Multiplicity="1" />
+    <End Role="ManagersToManagerRoles" Type="Self.ManagersToManagerRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagerRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ManagersToManagerRoles">
+        <PropertyRef Name="ManagerRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagersToManagerRoles_Managers">
+    <End Role="Managers" Type="Self.Managers" Multiplicity="1" />
+    <End Role="ManagersToManagerRoles" Type="Self.ManagersToManagerRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Managers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ManagersToManagerRoles">
+        <PropertyRef Name="ManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_A_REFERENCE_MEMBER">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Member_Advisory" Type="Self.Member_Advisory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Advisory">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_C_REFERENCE_MEMBER">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Member_Complaints" Type="Self.Member_Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Complaints">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Complaints_Appointment">
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="1" />
+    <End Role="Member_Complaints" Type="Self.Member_Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Complaints">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Complaints_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Member_Complaints" Type="Self.Member_Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Complaints">
+        <PropertyRef Name="Ins_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_E_REFERENCE_MEMBER">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Member_Evaluation" Type="Self.Member_Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Evaluation">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Evaluation_Appointment">
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="1" />
+    <End Role="Member_Evaluation" Type="Self.Member_Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Evaluation">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Evaluation_Institution">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Member_Evaluation" Type="Self.Member_Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Evaluation">
+        <PropertyRef Name="Ins_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_P_REFERENCE_MEMBER">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Member_Patient" Type="Self.Member_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Patient">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_P_REFERENCE_POINTS_T">
+    <End Role="Points_Type" Type="Self.Points_Type" Multiplicity="1" />
+    <End Role="Member_Points" Type="Self.Member_Points" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Points_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Points">
+        <PropertyRef Name="PointsTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Points_Member">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Member_Points" Type="Self.Member_Points" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Points">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_REFERENCE_ACCOUNT">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="Account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERSME_REFERENCE_Manager">
+    <End Role="OrdersMessage" Type="Self.OrdersMessage" Multiplicity="0..1" />
+    <End Role="OrdersMessage_Manager" Type="Self.OrdersMessage_Manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdersMessage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrdersMessage_Manager">
+        <PropertyRef Name="MessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERSME_REFERENCE_ORDERSME">
+    <End Role="OrdersMessage_Type" Type="Self.OrdersMessage_Type" Multiplicity="0..1" />
+    <End Role="OrdersMessage" Type="Self.OrdersMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdersMessage_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrdersMessage">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToModel_ManagerRoles">
+    <End Role="ManagerRoles" Type="Self.ManagerRoles" Multiplicity="1" />
+    <End Role="RoleToModule" Type="Self.RoleToModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagerRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleToModule">
+        <PropertyRef Name="ManagerRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToModel_Module">
+    <End Role="Module" Type="Self.Module" Multiplicity="1" />
+    <End Role="RoleToModule" Type="Self.RoleToModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleToModule">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scheduling_REFERENCE_Doctor">
+    <End Role="Institution_Doctor" Type="Self.Institution_Doctor" Multiplicity="1" />
+    <End Role="Institution_Scheduling" Type="Self.Institution_Scheduling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Scheduling">
+        <PropertyRef Name="Doctor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scheduling_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Institution_Scheduling" Type="Self.Institution_Scheduling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Scheduling">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symp_REFERENCE_Indi">
+    <End Role="Institution_Indications" Type="Self.Institution_Indications" Multiplicity="1" />
+    <End Role="Institution_Symptoms" Type="Self.Institution_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Indications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Symptoms">
+        <PropertyRef Name="InsIndi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symp_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Institution_Symptoms" Type="Self.Institution_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Symptoms">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symp_REFERENCE_MANAGE_S">
+    <End Role="Manage_Symptoms" Type="Self.Manage_Symptoms" Multiplicity="1" />
+    <End Role="Institution_Symptoms" Type="Self.Institution_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Symptoms">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Symptoms">
+        <PropertyRef Name="ManSym_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treat_REFERENCE_Dept">
+    <End Role="Institution_Department" Type="Self.Institution_Department" Multiplicity="1" />
+    <End Role="Institution_Treatment" Type="Self.Institution_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Treatment">
+        <PropertyRef Name="InsDept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treat_REFERENCE_INSTITUT">
+    <End Role="Institution" Type="Self.Institution" Multiplicity="1" />
+    <End Role="Institution_Treatment" Type="Self.Institution_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Treatment">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treat_REFERENCE_MANAGE_T">
+    <End Role="Manage_Treatment" Type="Self.Manage_Treatment" Multiplicity="1" />
+    <End Role="Institution_Treatment" Type="Self.Institution_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Treatment">
+        <PropertyRef Name="ManTreat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetNoCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="type" Type="char" Mode="In" />
+  </Function>
+  <Function Name="LoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <Parameter Name="isCardFirst" Type="bit" Mode="InOut" />
+    <Parameter Name="accountId" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="accountType" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Advertisement_Type" EntityType="Self.Advertisement_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Advertising" EntityType="Self.Advertising" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Announcement" EntityType="Self.Announcement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AppointmentsPatients" EntityType="Self.AppointmentsPatients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AppointmentStatus" EntityType="Self.AppointmentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Associate" EntityType="Self.Associate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Attachment" EntityType="Self.Attachment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrowserLog" EntityType="Self.BrowserLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Card" EntityType="Self.Card" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardTypeInfo" EntityType="Self.CardTypeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataDictionary" EntityType="Self.DataDictionary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataDictionaryType" EntityType="Self.DataDictionaryType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HelpCenter" EntityType="Self.HelpCenter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HelpCenterType" EntityType="Self.HelpCenterType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Info" EntityType="Self.Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoComment" EntityType="Self.InfoComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoType" EntityType="Self.InfoType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution" EntityType="Self.Institution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Advantages" EntityType="Self.Institution_Advantages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Department" EntityType="Self.Institution_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Doctor" EntityType="Self.Institution_Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Doctor_Department" EntityType="Self.Institution_Doctor_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Doctor_Treatment" EntityType="Self.Institution_Doctor_Treatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_EquipmentPicture" EntityType="Self.Institution_EquipmentPicture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Indications" EntityType="Self.Institution_Indications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Scheduling" EntityType="Self.Institution_Scheduling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_SetTime" EntityType="Self.Institution_SetTime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Symptoms" EntityType="Self.Institution_Symptoms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institution_Treatment" EntityType="Self.Institution_Treatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manage_Department" EntityType="Self.Manage_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manage_Indications" EntityType="Self.Manage_Indications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manage_Symptoms" EntityType="Self.Manage_Symptoms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manage_Treatment" EntityType="Self.Manage_Treatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManagerRoles" EntityType="Self.ManagerRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Managers" EntityType="Self.Managers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManagersToManagerRoles" EntityType="Self.ManagersToManagerRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member_Advisory" EntityType="Self.Member_Advisory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member_BackgroundImage" EntityType="Self.Member_BackgroundImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member_Complaints" EntityType="Self.Member_Complaints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member_Evaluation" EntityType="Self.Member_Evaluation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member_Message" EntityType="Self.Member_Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member_Patient" EntityType="Self.Member_Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member_Points" EntityType="Self.Member_Points" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Module" EntityType="Self.Module" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdersMessage" EntityType="Self.OrdersMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdersMessage_Manager" EntityType="Self.OrdersMessage_Manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdersMessage_Type" EntityType="Self.OrdersMessage_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Points_Type" EntityType="Self.Points_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservationCode" EntityType="Self.ReservationCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleToModule" EntityType="Self.RoleToModule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SysGuidence" EntityType="Self.SysGuidence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VerificationRecords" EntityType="Self.VerificationRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoTemplateRecord" EntityType="Self.NoTemplateRecord" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [NoTemplateRecord].[TypeCode] AS [TypeCode], 
+    [NoTemplateRecord].[CurrentIndex] AS [CurrentIndex], 
+    [NoTemplateRecord].[LastGetTime] AS [LastGetTime]
+    FROM [dbo].[NoTemplateRecord] AS [NoTemplateRecord]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ACCOUNT_REFERENCE_CARD" Association="Self.FK_ACCOUNT_REFERENCE_CARD">
+      <End Role="Card" EntitySet="Card" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACCOUNT_REFERENCE_INSTITUT" Association="Self.FK_ACCOUNT_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Activity_Institution" Association="Self.FK_Activity_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ADVERTIS_REFERENCE_ADVERTISTYPE1" Association="Self.FK_ADVERTIS_REFERENCE_ADVERTISTYPE1">
+      <End Role="Advertisement_Type" EntitySet="Advertisement_Type" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ADVERTIS1_REFERENCE_ADVERTIS3" Association="Self.FK_ADVERTIS1_REFERENCE_ADVERTIS3">
+      <End Role="Advertising" EntitySet="Advertising" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Announcement_Institution" Association="Self.FK_Announcement_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Announcement" EntitySet="Announcement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Appointment" Association="Self.FK_Appointment_Appointment">
+      <End Role="Institution_SetTime" EntitySet="Institution_SetTime" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_AppointmentStatus" Association="Self.FK_Appointment_AppointmentStatus">
+      <End Role="AppointmentStatus" EntitySet="AppointmentStatus" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Card" Association="Self.FK_Appointment_Card">
+      <End Role="Card" EntitySet="Card" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Institution" Association="Self.FK_Appointment_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Institution_Department" Association="Self.FK_Appointment_Institution_Department">
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Institution_Doctor" Association="Self.FK_Appointment_Institution_Doctor">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Member" Association="Self.FK_Appointment_Member">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppointmentsPatients_Appointment" Association="Self.FK_AppointmentsPatients_Appointment">
+      <End Role="Appointment" EntitySet="Appointment" />
+      <End Role="AppointmentsPatients" EntitySet="AppointmentsPatients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppointmentsPatients_Member_Patient" Association="Self.FK_AppointmentsPatients_Member_Patient">
+      <End Role="Member_Patient" EntitySet="Member_Patient" />
+      <End Role="AppointmentsPatients" EntitySet="AppointmentsPatients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachment_Institution" Association="Self.FK_Attachment_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Attachment" EntitySet="Attachment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BrowserLog_Account" Association="Self.FK_BrowserLog_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="BrowserLog" EntitySet="BrowserLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BrowserLog_Institution" Association="Self.FK_BrowserLog_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="BrowserLog" EntitySet="BrowserLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DATADICT_REFERENCE_DATADICT" Association="Self.FK_DATADICT_REFERENCE_DATADICT">
+      <End Role="DataDictionaryType" EntitySet="DataDictionaryType" />
+      <End Role="DataDictionary" EntitySet="DataDictionary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dept_REFERENCE_INSTITUT" Association="Self.FK_Dept_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dept_REFERENCE_MANAGE_D" Association="Self.FK_Dept_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doct_REFERENCE_Dept1" Association="Self.FK_Doct_REFERENCE_Dept1">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Institution_Doctor_Department" EntitySet="Institution_Doctor_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctDept_REFERENCE_Dept1" Association="Self.FK_DoctDept_REFERENCE_Dept1">
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+      <End Role="Institution_Doctor_Department" EntitySet="Institution_Doctor_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_REFERENCE_INSTITUT" Association="Self.FK_Doctor_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctTreat_REFERENCE_DoctDept" Association="Self.FK_DoctTreat_REFERENCE_DoctDept">
+      <End Role="Institution_Doctor_Department" EntitySet="Institution_Doctor_Department" />
+      <End Role="Institution_Doctor_Treatment" EntitySet="Institution_Doctor_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctTreat_REFERENCE_Docto" Association="Self.FK_DoctTreat_REFERENCE_Docto">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Institution_Doctor_Treatment" EntitySet="Institution_Doctor_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctTreat_REFERENCE_Treat" Association="Self.FK_DoctTreat_REFERENCE_Treat">
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+      <End Role="Institution_Doctor_Treatment" EntitySet="Institution_Doctor_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HELPCENT_REFERENCE_HELPCENT" Association="Self.FK_HELPCENT_REFERENCE_HELPCENT">
+      <End Role="HelpCenterType" EntitySet="HelpCenterType" />
+      <End Role="HelpCenter" EntitySet="HelpCenter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Indi_REFERENCE_INSTITUT" Association="Self.FK_Indi_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Indi_REFERENCE_MANAGE_I" Association="Self.FK_Indi_REFERENCE_MANAGE_I">
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Indi_REFERENCE_Treat" Association="Self.FK_Indi_REFERENCE_Treat">
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INFO_REFERENCE_INFOTYPE" Association="Self.FK_INFO_REFERENCE_INFOTYPE">
+      <End Role="InfoType" EntitySet="InfoType" />
+      <End Role="Info" EntitySet="Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INFOCOMM_REFERENCE_INFO" Association="Self.FK_INFOCOMM_REFERENCE_INFO">
+      <End Role="Info" EntitySet="Info" />
+      <End Role="InfoComment" EntitySet="InfoComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSTITUT_REFERENCE_INSTITUT" Association="Self.FK_INSTITUT_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_SetTime" EntitySet="Institution_SetTime" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institution_Advantages_Institution" Association="Self.FK_Institution_Advantages_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_Advantages" EntitySet="Institution_Advantages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institution_Equipment_Institution" Association="Self.FK_Institution_Equipment_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_EquipmentPicture" EntitySet="Institution_EquipmentPicture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_I_REFERENCE_MANAGE_D" Association="Self.FK_MANAGE_I_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_I_REFERENCE_MANAGE_T" Association="Self.FK_MANAGE_I_REFERENCE_MANAGE_T">
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_S_REFERENCE_MANAGE_D" Association="Self.FK_MANAGE_S_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_S_REFERENCE_MANAGE_I" Association="Self.FK_MANAGE_S_REFERENCE_MANAGE_I">
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_S_REFERENCE_MANAGE_T" Association="Self.FK_MANAGE_S_REFERENCE_MANAGE_T">
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_T_REFERENCE_MANAGE_D" Association="Self.FK_MANAGE_T_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagersToManagerRoles_ManagerRoles" Association="Self.FK_ManagersToManagerRoles_ManagerRoles">
+      <End Role="ManagerRoles" EntitySet="ManagerRoles" />
+      <End Role="ManagersToManagerRoles" EntitySet="ManagersToManagerRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagersToManagerRoles_Managers" Association="Self.FK_ManagersToManagerRoles_Managers">
+      <End Role="Managers" EntitySet="Managers" />
+      <End Role="ManagersToManagerRoles" EntitySet="ManagersToManagerRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_A_REFERENCE_MEMBER" Association="Self.FK_MEMBER_A_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Member_Advisory" EntitySet="Member_Advisory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_C_REFERENCE_MEMBER" Association="Self.FK_MEMBER_C_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Member_Complaints" EntitySet="Member_Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Complaints_Appointment" Association="Self.FK_Member_Complaints_Appointment">
+      <End Role="Appointment" EntitySet="Appointment" />
+      <End Role="Member_Complaints" EntitySet="Member_Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Complaints_Institution" Association="Self.FK_Member_Complaints_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Member_Complaints" EntitySet="Member_Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_E_REFERENCE_MEMBER" Association="Self.FK_MEMBER_E_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Member_Evaluation" EntitySet="Member_Evaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Evaluation_Appointment" Association="Self.FK_Member_Evaluation_Appointment">
+      <End Role="Appointment" EntitySet="Appointment" />
+      <End Role="Member_Evaluation" EntitySet="Member_Evaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Evaluation_Institution" Association="Self.FK_Member_Evaluation_Institution">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Member_Evaluation" EntitySet="Member_Evaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_P_REFERENCE_MEMBER" Association="Self.FK_MEMBER_P_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Member_Patient" EntitySet="Member_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_P_REFERENCE_POINTS_T" Association="Self.FK_MEMBER_P_REFERENCE_POINTS_T">
+      <End Role="Points_Type" EntitySet="Points_Type" />
+      <End Role="Member_Points" EntitySet="Member_Points" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Points_Member" Association="Self.FK_Member_Points_Member">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Member_Points" EntitySet="Member_Points" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_REFERENCE_ACCOUNT" Association="Self.FK_MEMBER_REFERENCE_ACCOUNT">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERSME_REFERENCE_Manager" Association="Self.FK_ORDERSME_REFERENCE_Manager">
+      <End Role="OrdersMessage" EntitySet="OrdersMessage" />
+      <End Role="OrdersMessage_Manager" EntitySet="OrdersMessage_Manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERSME_REFERENCE_ORDERSME" Association="Self.FK_ORDERSME_REFERENCE_ORDERSME">
+      <End Role="OrdersMessage_Type" EntitySet="OrdersMessage_Type" />
+      <End Role="OrdersMessage" EntitySet="OrdersMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToModel_ManagerRoles" Association="Self.FK_RoleToModel_ManagerRoles">
+      <End Role="ManagerRoles" EntitySet="ManagerRoles" />
+      <End Role="RoleToModule" EntitySet="RoleToModule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToModel_Module" Association="Self.FK_RoleToModel_Module">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="RoleToModule" EntitySet="RoleToModule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scheduling_REFERENCE_Doctor" Association="Self.FK_Scheduling_REFERENCE_Doctor">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Institution_Scheduling" EntitySet="Institution_Scheduling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scheduling_REFERENCE_INSTITUT" Association="Self.FK_Scheduling_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_Scheduling" EntitySet="Institution_Scheduling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symp_REFERENCE_Indi" Association="Self.FK_Symp_REFERENCE_Indi">
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+      <End Role="Institution_Symptoms" EntitySet="Institution_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symp_REFERENCE_INSTITUT" Association="Self.FK_Symp_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_Symptoms" EntitySet="Institution_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symp_REFERENCE_MANAGE_S" Association="Self.FK_Symp_REFERENCE_MANAGE_S">
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+      <End Role="Institution_Symptoms" EntitySet="Institution_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treat_REFERENCE_Dept" Association="Self.FK_Treat_REFERENCE_Dept">
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treat_REFERENCE_INSTITUT" Association="Self.FK_Treat_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institution" />
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treat_REFERENCE_MANAGE_T" Association="Self.FK_Treat_REFERENCE_MANAGE_T">
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

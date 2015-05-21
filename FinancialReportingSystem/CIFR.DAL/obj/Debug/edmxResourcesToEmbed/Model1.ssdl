@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CIFRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="ConfigCode" />
+    </Key>
+    <Property Name="ConfigCode" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ConfigName" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="ConfigValue" Type="nvarchar" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Managers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="ManagerAccount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ManagerPassword" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsLock" Type="bit" Nullable="false" />
+    <Property Name="LastVisitTime" Type="datetime" />
+    <Property Name="TestSiteCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TestSite">
+    <Key>
+      <PropertyRef Name="TestSiteId" />
+    </Key>
+    <Property Name="TestSiteId" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="TestSiteName" Type="nvarchar" MaxLength="32" />
+    <Property Name="TestSiteCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Updated" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="CIFRModelStoreContainer">
+    <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Managers" EntityType="Self.Managers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestSite" EntityType="Self.TestSite" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

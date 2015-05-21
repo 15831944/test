@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CIFRModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Configs">
+      <EntityTypeMapping TypeName="CIFRModel.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="ConfigCode" ColumnName="ConfigCode" />
+          <ScalarProperty Name="ConfigName" ColumnName="ConfigName" />
+          <ScalarProperty Name="ConfigValue" ColumnName="ConfigValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestSites">
+      <EntityTypeMapping TypeName="CIFRModel.TestSite">
+        <MappingFragment StoreEntitySet="TestSite">
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TestSiteCode" ColumnName="TestSiteCode" />
+          <ScalarProperty Name="TestSiteName" ColumnName="TestSiteName" />
+          <ScalarProperty Name="TestSiteId" ColumnName="TestSiteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Managers">
+      <EntityTypeMapping TypeName="CIFRModel.Manager">
+        <MappingFragment StoreEntitySet="Managers">
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TestSiteCode" ColumnName="TestSiteCode" />
+          <ScalarProperty Name="LastVisitTime" ColumnName="LastVisitTime" />
+          <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+          <ScalarProperty Name="ManagerPassword" ColumnName="ManagerPassword" />
+          <ScalarProperty Name="ManagerAccount" ColumnName="ManagerAccount" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,250 @@
+***出现错误：2015-05-08 11:39:27  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 13:21:39  Message：执行处理程序“System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper”的子请求时出错。  InnerException:未将对象引用设置到对象的实例。||
+***出现错误：2015-05-08 13:30:10  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:09:10  Message：未能从程序集“JCK.GodLoveWeb”中加载类型“JCK.GodLoveWeb.ManagerRoleProvider”。 (G:\项目源码\FinancialReportingSystem\JCK.GodLoveWeb\web.config line 64)  InnerException:未能从程序集“JCK.GodLoveWeb”中加载类型“JCK.GodLoveWeb.ManagerRoleProvider”。||
+***出现错误：2015-05-08 14:10:29  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:10:34  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.jjpynd2e.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:11:59  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:12:01  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.pojkly03.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:13:26  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:13:30  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.uoajs2fh.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:16:11  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:16:36  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.mh3o8uop.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:20:25  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:20:38  Message：在应用程序配置文件中找不到名为“JCKEntities”的连接字符串。||
+***出现错误：2015-05-08 14:22:40  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:22:53  Message：在应用程序配置文件中找不到名为“JCKEntities”的连接字符串。||
+***出现错误：2015-05-08 14:25:05  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:25:19  Message：在应用程序配置文件中找不到名为“JCKEntities”的连接字符串。||
+***出现错误：2015-05-08 14:30:45  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:30:50  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.jpfyqszm.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:35:37  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:35:49  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.llmqyvwq.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:39:23  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:39:55  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.v6px15zj.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:44:28  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 14:44:34  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.mdc2rcg3.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:46:14  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.bwm3jfbo.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:46:20  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.bwm3jfbo.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 14:46:44  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.hcbkwtcq.0.cs(32): error CS0234: 命名空间“JCK.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 15:03:08  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:03:14  Message：c:\Users\jerry\AppData\Local\Temp\Temporary ASP.NET Files\root\3619bebc\cfe4eeaa\App_Web_login.cshtml.2d2a254f.k7jrcs3c.0.cs(32): error CS0234: 命名空间“FRS.DAL”中不存在类型或命名空间名称“Manager”(是否缺少程序集引用?)||
+***出现错误：2015-05-08 15:05:15  Message：在应用程序配置文件中找不到名为“JCKEntities”的连接字符串。||
+***出现错误：2015-05-08 15:30:51  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:31:20  Message：在应用程序配置文件中找不到名为“JCKEntities”的连接字符串。||
+***出现错误：2015-05-08 15:33:59  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:34:55  Message：在应用程序配置文件中找不到名为“JCKEntities”的连接字符串。||
+***出现错误：2015-05-08 15:35:51  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:36:02  Message：在应用程序配置文件中找不到名为“JCKEntities”的连接字符串。||
+***出现错误：2015-05-08 15:36:51  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:37:02  Message：无法加载指定的元数据资源。||
+***出现错误：2015-05-08 15:38:43  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:39:14  Message：基础提供程序在 Open 上失败。  InnerException:Login failed for user 'sa'.||
+***出现错误：2015-05-08 15:45:16  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:45:27  Message：无法加载指定的元数据资源。||
+***出现错误：2015-05-08 15:48:41  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 15:49:17  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-08 15:49:26  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-08 16:13:38  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:14:27  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:19:19  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:21:38  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:30:30  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:35:54  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:36:05  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:38:19  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 16:43:45  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-08 16:43:56  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-08 16:49:37  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-08 17:07:58  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 17:08:58  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 17:10:03  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-08 17:10:53  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-08 17:14:18  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 17:22:31  Message：The controller for path '/' was not found or does not implement IController.||
+***出现错误：2015-05-08 17:26:29  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-12 09:28:23  Message：未能找到路径“C:\Program Files (x86)\IIS Express\template\FinancialReport.xls”的一部分。||
+***出现错误：2015-05-12 09:29:58  Message：未能找到路径“C:\Content\template\FinancialReport.xls”的一部分。||
+***出现错误：2015-05-12 09:35:42  Message：未能找到路径“C:\Program Files (x86)\IIS Express\~\Content\template\FinancialReport.xls”的一部分。||
+***出现错误：2015-05-12 09:42:07  Message：未能找到路径“C:\Content\template\FinancialReport.xls”的一部分。||
+***出现错误：2015-05-12 09:42:54  Message：未能找到路径“C:\Content\template\FinancialReport.xls”的一部分。||
+***出现错误：2015-05-12 10:03:06  Message：未能找到路径“C:\Program Files (x86)\IIS Express\~\Content\template\FinancialReport.xls”的一部分。||
+***出现错误：2015-05-12 10:05:24  Message：对路径“C:\Program Files (x86)\IIS Express\test.xls”的访问被拒绝。||
+***出现错误：2015-05-12 15:53:40  Message：文件“G:\项目源码\FinancialReportingSystem\FRS.Web\Content\template\FinancialReport.docx”正由另一进程使用，因此该进程无法访问此文件。||
+***出现错误：2015-05-12 17:15:51  Message：The document has no pages.||
+***出现错误：2015-05-12 17:18:12  Message：The document is not open.||
+***出现错误：2015-05-12 17:20:44  Message：The document has no pages.||
+***出现错误：2015-05-13 09:50:51  Message：The partial view '_ShowDialog' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/_ShowDialog.aspx
+~/Views/Administration/_ShowDialog.ascx
+~/Views/Shared/_ShowDialog.aspx
+~/Views/Shared/_ShowDialog.ascx
+~/Views/Administration/_ShowDialog.cshtml
+~/Views/Administration/_ShowDialog.vbhtml
+~/Views/Shared/_ShowDialog.cshtml
+~/Views/Shared/_ShowDialog.vbhtml||
+***出现错误：2015-05-13 09:51:17  Message：The partial view '_ShowDialog' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/_ShowDialog.aspx
+~/Views/Administration/_ShowDialog.ascx
+~/Views/Shared/_ShowDialog.aspx
+~/Views/Shared/_ShowDialog.ascx
+~/Views/Administration/_ShowDialog.cshtml
+~/Views/Administration/_ShowDialog.vbhtml
+~/Views/Shared/_ShowDialog.cshtml
+~/Views/Shared/_ShowDialog.vbhtml||
+***出现错误：2015-05-13 09:51:51  Message：The partial view '_ShowDialog' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/_ShowDialog.aspx
+~/Views/Administration/_ShowDialog.ascx
+~/Views/Shared/_ShowDialog.aspx
+~/Views/Shared/_ShowDialog.ascx
+~/Views/Administration/_ShowDialog.cshtml
+~/Views/Administration/_ShowDialog.vbhtml
+~/Views/Shared/_ShowDialog.cshtml
+~/Views/Shared/_ShowDialog.vbhtml||
+***出现错误：2015-05-13 09:52:16  Message：The partial view '_ShowDialog' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/_ShowDialog.aspx
+~/Views/Administration/_ShowDialog.ascx
+~/Views/Shared/_ShowDialog.aspx
+~/Views/Shared/_ShowDialog.ascx
+~/Views/Administration/_ShowDialog.cshtml
+~/Views/Administration/_ShowDialog.vbhtml
+~/Views/Shared/_ShowDialog.cshtml
+~/Views/Shared/_ShowDialog.vbhtml||
+***出现错误：2015-05-13 10:30:28  Message：The controller for path '/Home/LoginHandler1' was not found or does not implement IController.||
+***出现错误：2015-05-13 11:02:10  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-13 11:09:14  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-13 11:28:28  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-13 11:34:22  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-13 17:40:20  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-13 17:42:22  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 10:37:15  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-14 10:37:26  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-14 10:40:21  Message：The view 'Manager' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Administration/Manager.aspx
+~/Views/Administration/Manager.ascx
+~/Views/Shared/Manager.aspx
+~/Views/Shared/Manager.ascx
+~/Views/Administration/Manager.cshtml
+~/Views/Administration/Manager.vbhtml
+~/Views/Shared/Manager.cshtml
+~/Views/Shared/Manager.vbhtml||
+***出现错误：2015-05-14 13:14:52  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:15:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:16:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:17:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:18:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:20:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:21:53  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:22:44  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:23:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:24:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:25:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:26:40  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:27:41  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:30:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:31:36  Message：A public action method 'GetOrderMessage' was not found on controller 'CIFR.Web.Controllers.AdministrationController'.||
+***出现错误：2015-05-14 13:33:29  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 13:33:51  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 13:41:15  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 14:05:07  Message：The parameters dictionary contains a null entry for parameter 'type' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult TestSite_List(Int32, System.String, System.String, System.Nullable`1[System.Int32])' in 'CIFR.Web.Controllers.AdministrationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+参数名: parameters||
+***出现错误：2015-05-14 14:07:15  Message：The parameters dictionary contains a null entry for parameter 'type' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult TestSite_List(Int32, System.String, System.String, System.Nullable`1[System.Int32])' in 'CIFR.Web.Controllers.AdministrationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+参数名: parameters||
+***出现错误：2015-05-14 14:08:13  Message：The parameters dictionary contains a null entry for parameter 'type' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult TestSite_List(Int32, System.String, System.String, System.Nullable`1[System.Int32])' in 'CIFR.Web.Controllers.AdministrationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+参数名: parameters||
+***出现错误：2015-05-14 14:08:32  Message：The parameters dictionary contains a null entry for parameter 'type' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult TestSite_List(Int32, System.String, System.String, System.Nullable`1[System.Int32])' in 'CIFR.Web.Controllers.AdministrationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+参数名: parameters||
+***出现错误：2015-05-14 14:10:12  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 14:10:29  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 15:22:24  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 15:22:32  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 15:24:20  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 15:24:38  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 15:29:57  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 15:56:52  Message：g:\项目源码\FinancialReportingSystem\CIFR.Web\Views\Administration\Manager.cshtml(18): error CS1501: “GetTestSiteList”方法没有任何重载采用 0 个参数||
+***出现错误：2015-05-14 16:15:31  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 16:22:18  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 16:22:27  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 16:22:39  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 17:02:28  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 17:24:55  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-14 17:27:46  Message：The parameters dictionary contains a null entry for parameter 'type' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Manager_List(Int32, System.String, System.String, System.Nullable`1[System.Int32])' in 'CIFR.Web.Controllers.AdministrationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+参数名: parameters||
+***出现错误：2015-05-15 13:55:39  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-15 15:00:53  Message：The parameters dictionary contains a null entry for parameter 'type' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult BillDetail_List(Int32, System.String)' in 'CIFR.Web.Controllers.AdministrationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+参数名: parameters||
+***出现错误：2015-05-15 15:01:44  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-18 17:57:10  Message：无法在发送 HTTP 标头之后进行重定向。||
+***出现错误：2015-05-18 17:59:28  Message：无法在发送 HTTP 标头之后进行重定向。||

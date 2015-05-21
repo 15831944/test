@@ -1,0 +1,54 @@
+G:\项目源码\JCK-NEW\JCK.DAL\bin\Debug\JCK.DAL.dll.config
+G:\项目源码\JCK-NEW\JCK.DAL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW\JCK.DAL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW\JCK.DAL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW\JCK.DAL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW\JCK.DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW\JCK.DAL\obj\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW\JCK.DAL\obj\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW\JCK.DAL\obj\Debug\JCK.DAL.csprojResolveAssemblyReference.cache
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\bin\Debug\JCK.DAL.dll.config
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\obj\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - 副本\JCK.DAL\obj\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\bin\Debug\JCK.DAL.dll.config
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\obj\Debug\JCK.DAL.csprojResolveAssemblyReference.cache
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\obj\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.DAL\obj\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\bin\Debug\JCK.DAL.dll.config
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\obj\Debug\JCK.DAL.csprojResolveAssemblyReference.cache
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\obj\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.DAL\obj\Debug\JCK.DAL.pdb
+G:\项目源码\UserStory\JCK.DAL\bin\Debug\JCK.DAL.dll.config
+G:\项目源码\UserStory\JCK.DAL\bin\Debug\JCK.DAL.dll
+G:\项目源码\UserStory\JCK.DAL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\UserStory\JCK.DAL\bin\Debug\EntityFramework.dll
+G:\项目源码\UserStory\JCK.DAL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\UserStory\JCK.DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\UserStory\JCK.DAL\obj\Debug\JCK.DAL.dll
+G:\项目源码\UserStory\JCK.DAL\obj\Debug\JCK.DAL.pdb
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\JCK.DAL.dll.config
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\JCK.DAL.dll
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\EntityFramework.dll
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\EntityFramework.xml
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\项目源码\FinancialReportingSystem\JCK.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\项目源码\FinancialReportingSystem\JCK.DAL\obj\Debug\JCK.DAL.dll
+G:\项目源码\FinancialReportingSystem\JCK.DAL\obj\Debug\JCK.DAL.pdb

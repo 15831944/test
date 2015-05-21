@@ -1,0 +1,126 @@
+
+
+
+/*date calendar*/
+.silk-date {
+    margin: 10px 50px;
+    width: 417px;
+    height: 354px;
+    background: url(../images/celander/celander-bg.png) no-repeat;
+    position: relative;
+    z-index: 100;
+}
+
+.silk-d-c {
+    clear: both;
+    overflow: hidden;
+}
+
+.button-date-left, .button-date-right, .silk-calendar-icon, .silk-date-header-l, .silk-date-header-r, .silk-date-bottom {
+    background: url(../images/celander/silkcalender.png) no-repeat scroll 0 0;
+}
+
+.silk-date-header {
+    float: left;
+    width: 100%;
+}
+
+    .silk-date-header table {
+        margin: 0;
+    }
+
+        .silk-date-header table thead tr th, .silk-date-blue {
+            border: none;
+            color: #fff;
+        }
+
+.silk-date-blue {
+    font-size: 22px;
+    clear: both;
+    overflow: hidden;
+}
+
+.button-date-left, .button-date-right, .silk-month {
+    float: left;
+}
+
+.button-date-left {
+    background-position: -119px 0;
+    width: 10px;
+    height: 15px;
+    border: none;
+    margin: 15px 0 0 6px;
+}
+
+.button-date-right {
+    background-position: -63px 0;
+    width: 10px;
+    height: 15px;
+    border: none;
+    margin: 15px 0 0 6px;
+}
+
+.silk-month {
+    margin: 3px 27px 0;
+    letter-spacing: 2px;
+}
+
+.silk-calendar-icon {
+    background-position: -86px -80px;
+    width: 38px;
+    height: 38px;
+    float: right;
+    margin: 3px 10px 0 0;
+}
+
+.silk-date .data-table tbody tr {
+    border-bottom: none;
+}
+
+.silk-date .data-table tbody td {
+    border: none;
+    color: #ccc;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+    .silk-date .data-table tbody td .selected {
+        color: white !important;
+        background-color: #45C0E9;
+    }
+
+    .silk-date .data-table tbody td .canselect {
+        color: #444;
+    }
+
+    .silk-date .data-table tbody td .cannotselect {
+        color: #ccc;
+        cursor: default;
+    }
+
+.silk-time {
+    background: url(../images/celander/date-time.png) no-repeat scroll 0 4px;
+    width: 117px;
+    height: 147px;
+    position: absolute;
+}
+
+    .silk-time ul {
+        padding-top: 17px;
+    }
+
+        .silk-time ul li {
+            padding: 0 0 8px 25px;
+            font-size: 14px;
+            height:19px;
+            color: #525252;
+        }
+
+            .silk-time ul li:hover {
+                color: white !important;
+                background-color: #45C0E9;
+            }
+
+            .silk-time ul li input {
+                vertical-align: top;
+            }

@@ -1,0 +1,138 @@
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\JCK.BLL.pdb
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\JCK.Helper.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\NPOI.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\NPOI.HSSF.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\System.Web.Mvc.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\System.Web.WebPages.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\NPOI.POIFS.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\NPOI.HPSF.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\NPOI.Util.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\NPOI.DDF.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\System.Web.Razor.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\System.Web.WebPages.Razor.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW\JCK.BLL\bin\Debug\JCK.Helper.pdb
+G:\项目源码\JCK-NEW\JCK.BLL\obj\Debug\JCK.BLL.csprojResolveAssemblyReference.cache
+G:\项目源码\JCK-NEW\JCK.BLL\obj\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW\JCK.BLL\obj\Debug\JCK.BLL.pdb
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\JCK.BLL.pdb
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\JCK.Helper.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\NPOI.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\NPOI.HSSF.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\System.Web.Mvc.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\System.Web.WebPages.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\NPOI.POIFS.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\NPOI.HPSF.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\NPOI.Util.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\NPOI.DDF.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\System.Web.Razor.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\System.Web.WebPages.Razor.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\bin\Debug\JCK.Helper.pdb
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\obj\Debug\JCK.BLL.csprojResolveAssemblyReference.cache
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\obj\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW - 副本\JCK.BLL\obj\Debug\JCK.BLL.pdb
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\JCK.BLL.pdb
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\JCK.Helper.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\NPOI.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\NPOI.HSSF.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\System.Web.Mvc.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\System.Web.WebPages.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\NPOI.POIFS.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\NPOI.HPSF.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\NPOI.Util.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\NPOI.DDF.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\System.Web.Razor.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\System.Web.WebPages.Razor.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\bin\Debug\JCK.Helper.pdb
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\obj\Debug\JCK.BLL.csprojResolveAssemblyReference.cache
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\obj\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW - [消息]\JCK.BLL\obj\Debug\JCK.BLL.pdb
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\JCK.BLL.pdb
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\EntityFramework.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\JCK.DAL.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\JCK.Helper.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\NPOI.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\NPOI.HSSF.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\System.Web.Mvc.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\System.Web.WebPages.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\NPOI.POIFS.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\NPOI.HPSF.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\NPOI.Util.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\NPOI.DDF.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\System.Web.Razor.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\System.Web.WebPages.Razor.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\bin\Debug\JCK.Helper.pdb
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\obj\Debug\JCK.BLL.csprojResolveAssemblyReference.cache
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\obj\Debug\JCK.BLL.dll
+G:\项目源码\JCK-NEW - [消息]-\JCK.BLL\obj\Debug\JCK.BLL.pdb
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\JCK.BLL.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\JCK.BLL.pdb
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\EntityFramework.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\JCK.DAL.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\JCK.Helper.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\NPOI.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\NPOI.HSSF.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\System.Web.Mvc.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\System.Web.WebPages.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\NPOI.POIFS.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\NPOI.HPSF.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\NPOI.Util.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\NPOI.DDF.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\System.Web.Razor.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\System.Web.WebPages.Razor.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\UserStory\JCK.BLL\bin\Debug\JCK.Helper.pdb
+G:\项目源码\UserStory\JCK.BLL\obj\Debug\JCK.BLL.csprojResolveAssemblyReference.cache
+G:\项目源码\UserStory\JCK.BLL\obj\Debug\JCK.BLL.dll
+G:\项目源码\UserStory\JCK.BLL\obj\Debug\JCK.BLL.pdb
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\JCK.BLL.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\JCK.BLL.pdb
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\EntityFramework.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\EntityFramework.Extended.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\EntityFramework.SqlServer.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\JCK.DAL.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\JCK.Helper.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\NPOI.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\NPOI.HSSF.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\System.Web.Mvc.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\System.Web.WebPages.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\NPOI.POIFS.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\NPOI.HPSF.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\NPOI.Util.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\NPOI.DDF.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\System.Web.Razor.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\System.Web.WebPages.Razor.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\JCK.DAL.pdb
+G:\项目源码\FinancialReportingSystem\JCK.BLL\bin\Debug\JCK.Helper.pdb
+G:\项目源码\FinancialReportingSystem\JCK.BLL\obj\Debug\JCK.BLL.csprojResolveAssemblyReference.cache
+G:\项目源码\FinancialReportingSystem\JCK.BLL\obj\Debug\JCK.BLL.dll
+G:\项目源码\FinancialReportingSystem\JCK.BLL\obj\Debug\JCK.BLL.pdb

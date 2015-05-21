@@ -1,0 +1,2142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="LoginCheck" ReturnType="Collection(String)">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="isCardFirst" Mode="InOut" Type="Boolean" />
+      <Parameter Name="accountId" Mode="InOut" Type="String" />
+      <Parameter Name="accountType" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetNoCode" ReturnType="Collection(String)">
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Accounts" EntityType="Model.Account" />
+    <EntitySet Name="Activities" EntityType="Model.Activity" />
+    <EntitySet Name="Advertisements" EntityType="Model.Advertisement" />
+    <EntitySet Name="Advertisement_Type" EntityType="Model.Advertisement_Type" />
+    <EntitySet Name="Advertisings" EntityType="Model.Advertising" />
+    <EntitySet Name="Announcements" EntityType="Model.Announcement" />
+    <EntitySet Name="Appointments" EntityType="Model.Appointment" />
+    <EntitySet Name="AppointmentStatus" EntityType="Model.AppointmentStatu" />
+    <EntitySet Name="Areas" EntityType="Model.Area" />
+    <EntitySet Name="Associates" EntityType="Model.Associate" />
+    <EntitySet Name="Attachments" EntityType="Model.Attachment" />
+    <EntitySet Name="BrowserLogs" EntityType="Model.BrowserLog" />
+    <EntitySet Name="Cards" EntityType="Model.Card" />
+    <EntitySet Name="CardTypeInfoes" EntityType="Model.CardTypeInfo" />
+    <EntitySet Name="Cities" EntityType="Model.City" />
+    <EntitySet Name="Configs" EntityType="Model.Config" />
+    <EntitySet Name="DataDictionaries" EntityType="Model.DataDictionary" />
+    <EntitySet Name="DataDictionaryTypes" EntityType="Model.DataDictionaryType" />
+    <EntitySet Name="HelpCenters" EntityType="Model.HelpCenter" />
+    <EntitySet Name="HelpCenterTypes" EntityType="Model.HelpCenterType" />
+    <EntitySet Name="Infoes" EntityType="Model.Info" />
+    <EntitySet Name="InfoComments" EntityType="Model.InfoComment" />
+    <EntitySet Name="InfoTypes" EntityType="Model.InfoType" />
+    <EntitySet Name="Institutions" EntityType="Model.Institution" />
+    <EntitySet Name="Institution_Advantages" EntityType="Model.Institution_Advantages" />
+    <EntitySet Name="Institution_Department" EntityType="Model.Institution_Department" />
+    <EntitySet Name="Institution_Doctor" EntityType="Model.Institution_Doctor" />
+    <EntitySet Name="Institution_Doctor_Department" EntityType="Model.Institution_Doctor_Department" />
+    <EntitySet Name="Institution_Doctor_Treatment" EntityType="Model.Institution_Doctor_Treatment" />
+    <EntitySet Name="Institution_EquipmentPicture" EntityType="Model.Institution_EquipmentPicture" />
+    <EntitySet Name="Institution_Indications" EntityType="Model.Institution_Indications" />
+    <EntitySet Name="Institution_Scheduling" EntityType="Model.Institution_Scheduling" />
+    <EntitySet Name="Institution_SetTime" EntityType="Model.Institution_SetTime" />
+    <EntitySet Name="Institution_Symptoms" EntityType="Model.Institution_Symptoms" />
+    <EntitySet Name="Institution_Treatment" EntityType="Model.Institution_Treatment" />
+    <EntitySet Name="Manage_Department" EntityType="Model.Manage_Department" />
+    <EntitySet Name="Manage_Indications" EntityType="Model.Manage_Indications" />
+    <EntitySet Name="Manage_Symptoms" EntityType="Model.Manage_Symptoms" />
+    <EntitySet Name="Manage_Treatment" EntityType="Model.Manage_Treatment" />
+    <EntitySet Name="ManagerRoles" EntityType="Model.ManagerRole" />
+    <EntitySet Name="Managers" EntityType="Model.Manager" />
+    <EntitySet Name="Members" EntityType="Model.Member" />
+    <EntitySet Name="Member_Advisory" EntityType="Model.Member_Advisory" />
+    <EntitySet Name="Member_BackgroundImage" EntityType="Model.Member_BackgroundImage" />
+    <EntitySet Name="Member_Complaints" EntityType="Model.Member_Complaints" />
+    <EntitySet Name="Member_Evaluation" EntityType="Model.Member_Evaluation" />
+    <EntitySet Name="Member_Message" EntityType="Model.Member_Message" />
+    <EntitySet Name="Member_Patient" EntityType="Model.Member_Patient" />
+    <EntitySet Name="Member_Points" EntityType="Model.Member_Points" />
+    <EntitySet Name="Menus" EntityType="Model.Menu" />
+    <EntitySet Name="Modules" EntityType="Model.Module" />
+    <EntitySet Name="OrdersMessages" EntityType="Model.OrdersMessage" />
+    <EntitySet Name="OrdersMessage_Manager" EntityType="Model.OrdersMessage_Manager" />
+    <EntitySet Name="OrdersMessage_Type" EntityType="Model.OrdersMessage_Type" />
+    <EntitySet Name="Points_Type" EntityType="Model.Points_Type" />
+    <EntitySet Name="Provinces" EntityType="Model.Province" />
+    <EntitySet Name="ReservationCodes" EntityType="Model.ReservationCode" />
+    <EntitySet Name="RoleToModules" EntityType="Model.RoleToModule" />
+    <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagram" />
+    <EntitySet Name="SysGuidences" EntityType="Model.SysGuidence" />
+    <EntitySet Name="VerificationRecords" EntityType="Model.VerificationRecord" />
+    <EntitySet Name="NoTemplateRecords" EntityType="Model.NoTemplateRecord" />
+    <AssociationSet Name="FK_ACCOUNT_REFERENCE_CARD" Association="Model.FK_ACCOUNT_REFERENCE_CARD">
+      <End Role="Card" EntitySet="Cards" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACCOUNT_REFERENCE_INSTITUT" Association="Model.FK_ACCOUNT_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BrowserLog_Account" Association="Model.FK_BrowserLog_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="BrowserLog" EntitySet="BrowserLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_REFERENCE_ACCOUNT" Association="Model.FK_MEMBER_REFERENCE_ACCOUNT">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Activity_Institution" Association="Model.FK_Activity_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Activity" EntitySet="Activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ADVERTIS_REFERENCE_ADVERTISTYPE1" Association="Model.FK_ADVERTIS_REFERENCE_ADVERTISTYPE1">
+      <End Role="Advertisement_Type" EntitySet="Advertisement_Type" />
+      <End Role="Advertisement" EntitySet="Advertisements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ADVERTIS1_REFERENCE_ADVERTIS3" Association="Model.FK_ADVERTIS1_REFERENCE_ADVERTIS3">
+      <End Role="Advertising" EntitySet="Advertisings" />
+      <End Role="Advertisement" EntitySet="Advertisements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Announcement_Institution" Association="Model.FK_Announcement_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Announcement" EntitySet="Announcements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Appointment" Association="Model.FK_Appointment_Appointment">
+      <End Role="Institution_SetTime" EntitySet="Institution_SetTime" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_AppointmentStatus" Association="Model.FK_Appointment_AppointmentStatus">
+      <End Role="AppointmentStatu" EntitySet="AppointmentStatus" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Card" Association="Model.FK_Appointment_Card">
+      <End Role="Card" EntitySet="Cards" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Institution" Association="Model.FK_Appointment_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Institution_Department" Association="Model.FK_Appointment_Institution_Department">
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Institution_Doctor" Association="Model.FK_Appointment_Institution_Doctor">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Member" Association="Model.FK_Appointment_Member">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Complaints_Appointment" Association="Model.FK_Member_Complaints_Appointment">
+      <End Role="Appointment" EntitySet="Appointments" />
+      <End Role="Member_Complaints" EntitySet="Member_Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Evaluation_Appointment" Association="Model.FK_Member_Evaluation_Appointment">
+      <End Role="Appointment" EntitySet="Appointments" />
+      <End Role="Member_Evaluation" EntitySet="Member_Evaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachment_Institution" Association="Model.FK_Attachment_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Attachment" EntitySet="Attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BrowserLog_Institution" Association="Model.FK_BrowserLog_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="BrowserLog" EntitySet="BrowserLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DATADICT_REFERENCE_DATADICT" Association="Model.FK_DATADICT_REFERENCE_DATADICT">
+      <End Role="DataDictionaryType" EntitySet="DataDictionaryTypes" />
+      <End Role="DataDictionary" EntitySet="DataDictionaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HELPCENT_REFERENCE_HELPCENT" Association="Model.FK_HELPCENT_REFERENCE_HELPCENT">
+      <End Role="HelpCenterType" EntitySet="HelpCenterTypes" />
+      <End Role="HelpCenter" EntitySet="HelpCenters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INFO_REFERENCE_INFOTYPE" Association="Model.FK_INFO_REFERENCE_INFOTYPE">
+      <End Role="InfoType" EntitySet="InfoTypes" />
+      <End Role="Info" EntitySet="Infoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INFOCOMM_REFERENCE_INFO" Association="Model.FK_INFOCOMM_REFERENCE_INFO">
+      <End Role="Info" EntitySet="Infoes" />
+      <End Role="InfoComment" EntitySet="InfoComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dept_REFERENCE_INSTITUT" Association="Model.FK_Dept_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_REFERENCE_INSTITUT" Association="Model.FK_Doctor_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Indi_REFERENCE_INSTITUT" Association="Model.FK_Indi_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSTITUT_REFERENCE_INSTITUT" Association="Model.FK_INSTITUT_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_SetTime" EntitySet="Institution_SetTime" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institution_Advantages_Institution" Association="Model.FK_Institution_Advantages_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_Advantages" EntitySet="Institution_Advantages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institution_Equipment_Institution" Association="Model.FK_Institution_Equipment_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_EquipmentPicture" EntitySet="Institution_EquipmentPicture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Complaints_Institution" Association="Model.FK_Member_Complaints_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Member_Complaints" EntitySet="Member_Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Evaluation_Institution" Association="Model.FK_Member_Evaluation_Institution">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Member_Evaluation" EntitySet="Member_Evaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scheduling_REFERENCE_INSTITUT" Association="Model.FK_Scheduling_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_Scheduling" EntitySet="Institution_Scheduling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symp_REFERENCE_INSTITUT" Association="Model.FK_Symp_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_Symptoms" EntitySet="Institution_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treat_REFERENCE_INSTITUT" Association="Model.FK_Treat_REFERENCE_INSTITUT">
+      <End Role="Institution" EntitySet="Institutions" />
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dept_REFERENCE_MANAGE_D" Association="Model.FK_Dept_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctDept_REFERENCE_Dept1" Association="Model.FK_DoctDept_REFERENCE_Dept1">
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+      <End Role="Institution_Doctor_Department" EntitySet="Institution_Doctor_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treat_REFERENCE_Dept" Association="Model.FK_Treat_REFERENCE_Dept">
+      <End Role="Institution_Department" EntitySet="Institution_Department" />
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doct_REFERENCE_Dept1" Association="Model.FK_Doct_REFERENCE_Dept1">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Institution_Doctor_Department" EntitySet="Institution_Doctor_Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctTreat_REFERENCE_Docto" Association="Model.FK_DoctTreat_REFERENCE_Docto">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Institution_Doctor_Treatment" EntitySet="Institution_Doctor_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scheduling_REFERENCE_Doctor" Association="Model.FK_Scheduling_REFERENCE_Doctor">
+      <End Role="Institution_Doctor" EntitySet="Institution_Doctor" />
+      <End Role="Institution_Scheduling" EntitySet="Institution_Scheduling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctTreat_REFERENCE_DoctDept" Association="Model.FK_DoctTreat_REFERENCE_DoctDept">
+      <End Role="Institution_Doctor_Department" EntitySet="Institution_Doctor_Department" />
+      <End Role="Institution_Doctor_Treatment" EntitySet="Institution_Doctor_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctTreat_REFERENCE_Treat" Association="Model.FK_DoctTreat_REFERENCE_Treat">
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+      <End Role="Institution_Doctor_Treatment" EntitySet="Institution_Doctor_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Indi_REFERENCE_MANAGE_I" Association="Model.FK_Indi_REFERENCE_MANAGE_I">
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Indi_REFERENCE_Treat" Association="Model.FK_Indi_REFERENCE_Treat">
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symp_REFERENCE_Indi" Association="Model.FK_Symp_REFERENCE_Indi">
+      <End Role="Institution_Indications" EntitySet="Institution_Indications" />
+      <End Role="Institution_Symptoms" EntitySet="Institution_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symp_REFERENCE_MANAGE_S" Association="Model.FK_Symp_REFERENCE_MANAGE_S">
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+      <End Role="Institution_Symptoms" EntitySet="Institution_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treat_REFERENCE_MANAGE_T" Association="Model.FK_Treat_REFERENCE_MANAGE_T">
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+      <End Role="Institution_Treatment" EntitySet="Institution_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_I_REFERENCE_MANAGE_D" Association="Model.FK_MANAGE_I_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_S_REFERENCE_MANAGE_D" Association="Model.FK_MANAGE_S_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_T_REFERENCE_MANAGE_D" Association="Model.FK_MANAGE_T_REFERENCE_MANAGE_D">
+      <End Role="Manage_Department" EntitySet="Manage_Department" />
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_I_REFERENCE_MANAGE_T" Association="Model.FK_MANAGE_I_REFERENCE_MANAGE_T">
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_S_REFERENCE_MANAGE_I" Association="Model.FK_MANAGE_S_REFERENCE_MANAGE_I">
+      <End Role="Manage_Indications" EntitySet="Manage_Indications" />
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MANAGE_S_REFERENCE_MANAGE_T" Association="Model.FK_MANAGE_S_REFERENCE_MANAGE_T">
+      <End Role="Manage_Treatment" EntitySet="Manage_Treatment" />
+      <End Role="Manage_Symptoms" EntitySet="Manage_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToModel_ManagerRoles" Association="Model.FK_RoleToModel_ManagerRoles">
+      <End Role="ManagerRole" EntitySet="ManagerRoles" />
+      <End Role="RoleToModule" EntitySet="RoleToModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_A_REFERENCE_MEMBER" Association="Model.FK_MEMBER_A_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Member_Advisory" EntitySet="Member_Advisory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_C_REFERENCE_MEMBER" Association="Model.FK_MEMBER_C_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Member_Complaints" EntitySet="Member_Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_E_REFERENCE_MEMBER" Association="Model.FK_MEMBER_E_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Member_Evaluation" EntitySet="Member_Evaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_P_REFERENCE_MEMBER" Association="Model.FK_MEMBER_P_REFERENCE_MEMBER">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Member_Patient" EntitySet="Member_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Points_Member" Association="Model.FK_Member_Points_Member">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Member_Points" EntitySet="Member_Points" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_P_REFERENCE_POINTS_T" Association="Model.FK_MEMBER_P_REFERENCE_POINTS_T">
+      <End Role="Points_Type" EntitySet="Points_Type" />
+      <End Role="Member_Points" EntitySet="Member_Points" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToModel_Module" Association="Model.FK_RoleToModel_Module">
+      <End Role="Module" EntitySet="Modules" />
+      <End Role="RoleToModule" EntitySet="RoleToModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERSME_REFERENCE_Manager" Association="Model.FK_ORDERSME_REFERENCE_Manager">
+      <End Role="OrdersMessage" EntitySet="OrdersMessages" />
+      <End Role="OrdersMessage_Manager" EntitySet="OrdersMessage_Manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERSME_REFERENCE_ORDERSME" Association="Model.FK_ORDERSME_REFERENCE_ORDERSME">
+      <End Role="OrdersMessage_Type" EntitySet="OrdersMessage_Type" />
+      <End Role="OrdersMessage" EntitySet="OrdersMessages" />
+    </AssociationSet>
+    <AssociationSet Name="AppointmentsPatients" Association="Model.AppointmentsPatients">
+      <End Role="Appointment" EntitySet="Appointments" />
+      <End Role="Member_Patient" EntitySet="Member_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="ManagersToManagerRoles" Association="Model.ManagersToManagerRoles">
+      <End Role="ManagerRole" EntitySet="ManagerRoles" />
+      <End Role="Manager" EntitySet="Managers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Institution_id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Card_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassWord" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationCode" Type="Int32" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccountType" Type="Int32" />
+    <Property Name="MemOrInstitutionNO" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CurrentLoginDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Card" Relationship="Model.FK_ACCOUNT_REFERENCE_CARD" FromRole="Account" ToRole="Card" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_ACCOUNT_REFERENCE_INSTITUT" FromRole="Account" ToRole="Institution" />
+    <NavigationProperty Name="BrowserLogs" Relationship="Model.FK_BrowserLog_Account" FromRole="Account" ToRole="BrowserLog" />
+    <NavigationProperty Name="Members" Relationship="Model.FK_MEMBER_REFERENCE_ACCOUNT" FromRole="Account" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ActivityName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ActivityTime" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ActivityInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsPublished" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CreateBy" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifyBy" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Activity_Institution" FromRole="Activity" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="Advertisement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ADTypeID" Type="Int32" />
+    <Property Name="AD_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Links" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsOpen" Type="Boolean" Nullable="false" />
+    <Property Name="Contacts" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="AdPlacement" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Advertisement_Type" Relationship="Model.FK_ADVERTIS_REFERENCE_ADVERTISTYPE1" FromRole="Advertisement" ToRole="Advertisement_Type" />
+    <NavigationProperty Name="Advertising" Relationship="Model.FK_ADVERTIS1_REFERENCE_ADVERTIS3" FromRole="Advertisement" ToRole="Advertising" />
+  </EntityType>
+  <EntityType Name="Advertisement_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Advertisements" Relationship="Model.FK_ADVERTIS_REFERENCE_ADVERTISTYPE1" FromRole="Advertisement_Type" ToRole="Advertisement" />
+  </EntityType>
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ADName" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ADWidth" Type="Int32" />
+    <Property Name="ADHeight" Type="Int32" />
+    <Property Name="ADDescription" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ADTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Advertisements" Relationship="Model.FK_ADVERTIS1_REFERENCE_ADVERTIS3" FromRole="Advertising" ToRole="Advertisement" />
+  </EntityType>
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AnnouncementTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AnnouncementInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsPublished" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CreateBy" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifyBy" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Announcement_Institution" FromRole="Announcement" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentNo" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SetTimeId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CardID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ItemIDs" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="SymptomsName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="TimeSection" Type="Int32" />
+    <Property Name="AppointmentType" Type="Int32" Nullable="false" />
+    <Property Name="Operater" Type="Int32" />
+    <Property Name="CancelReason" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionState" Type="Int32" />
+    <Property Name="ReservationCode" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="IsNoCard" Type="Boolean" Nullable="false" />
+    <Property Name="MemberId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentMoney" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Institution_SetTime" Relationship="Model.FK_Appointment_Appointment" FromRole="Appointment" ToRole="Institution_SetTime" />
+    <NavigationProperty Name="AppointmentStatu" Relationship="Model.FK_Appointment_AppointmentStatus" FromRole="Appointment" ToRole="AppointmentStatu" />
+    <NavigationProperty Name="Card" Relationship="Model.FK_Appointment_Card" FromRole="Appointment" ToRole="Card" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Appointment_Institution" FromRole="Appointment" ToRole="Institution" />
+    <NavigationProperty Name="Institution_Department" Relationship="Model.FK_Appointment_Institution_Department" FromRole="Appointment" ToRole="Institution_Department" />
+    <NavigationProperty Name="Institution_Doctor" Relationship="Model.FK_Appointment_Institution_Doctor" FromRole="Appointment" ToRole="Institution_Doctor" />
+    <NavigationProperty Name="Member" Relationship="Model.FK_Appointment_Member" FromRole="Appointment" ToRole="Member" />
+    <NavigationProperty Name="Member_Complaints" Relationship="Model.FK_Member_Complaints_Appointment" FromRole="Appointment" ToRole="Member_Complaints" />
+    <NavigationProperty Name="Member_Evaluation" Relationship="Model.FK_Member_Evaluation_Appointment" FromRole="Appointment" ToRole="Member_Evaluation" />
+    <NavigationProperty Name="Member_Patient" Relationship="Model.AppointmentsPatients" FromRole="Appointment" ToRole="Member_Patient" />
+    <Property Name="OtherInfo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AppDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="AppointmentStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StateTxt" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Appointments" Relationship="Model.FK_Appointment_AppointmentStatus" FromRole="AppointmentStatu" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int64" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Associate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="SourceID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="TargetID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AssociatType" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ServerFolder" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="InnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AttachFileType" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CombinePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Attachment_Institution" FromRole="Attachment" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="BrowserLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="accountId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="Model.FK_BrowserLog_Account" FromRole="BrowserLog" ToRole="Account" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_BrowserLog_Institution" FromRole="BrowserLog" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CardNo" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CardType" Type="Int32" Nullable="false" />
+    <Property Name="Owners" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Valid" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ProvinceID" Type="Int64" />
+    <Property Name="CityID" Type="Int64" />
+    <Property Name="AreaID" Type="Int64" />
+    <Property Name="MemberID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="StartValid" Type="DateTime" Precision="3" />
+    <Property Name="BindingTime" Type="DateTime" Precision="3" />
+    <Property Name="IsUsed" Type="Int32" />
+    <Property Name="IsDel" Type="Int32" />
+    <NavigationProperty Name="Accounts" Relationship="Model.FK_ACCOUNT_REFERENCE_CARD" FromRole="Card" ToRole="Account" />
+    <NavigationProperty Name="Appointments" Relationship="Model.FK_Appointment_Card" FromRole="Card" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="CardTypeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CardTypeID" Type="Int32" Nullable="false" />
+    <Property Name="UseDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CardUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Account_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ItemIDs" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="IsGuess" Type="Boolean" />
+    <Property Name="IsTake" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProvinceID" Type="Int64" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="ConfigCode" />
+    </Key>
+    <Property Name="ConfigCode" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ConfigName" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="ConfigValue" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DataDictionary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="Isvalid" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DataDictionaryType" Relationship="Model.FK_DATADICT_REFERENCE_DATADICT" FromRole="DataDictionary" ToRole="DataDictionaryType" />
+    <Property Name="IsSystem" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="DataDictionaryType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DataDictionaries" Relationship="Model.FK_DATADICT_REFERENCE_DATADICT" FromRole="DataDictionaryType" ToRole="DataDictionary" />
+  </EntityType>
+  <EntityType Name="HelpCenter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="HelpCenterType_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsShow" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsMember" Type="Boolean" Nullable="false" />
+    <Property Name="ParentTypeId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HelpCenterType" Relationship="Model.FK_HELPCENT_REFERENCE_HELPCENT" FromRole="HelpCenter" ToRole="HelpCenterType" />
+  </EntityType>
+  <EntityType Name="HelpCenterType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="OnanId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="LevelId" Type="Int32" Nullable="false" />
+    <Property Name="SortIndex" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsMember" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="HelpCenters" Relationship="Model.FK_HELPCENT_REFERENCE_HELPCENT" FromRole="HelpCenterType" ToRole="HelpCenter" />
+  </EntityType>
+  <EntityType Name="Info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InfoType_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Account_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClickRate" Type="Int32" />
+    <Property Name="IsHeadlines" Type="Boolean" />
+    <Property Name="IsImage" Type="Boolean" />
+    <Property Name="Image" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsHot" Type="Boolean" />
+    <Property Name="CommentId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CommentTime" Type="DateTime" Precision="3" />
+    <Property Name="CommenNumber" Type="Int32" />
+    <Property Name="IsShow" Type="Boolean" />
+    <Property Name="IsAudit" Type="Boolean" />
+    <Property Name="State" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="IsSysInfo" Type="Boolean" />
+    <NavigationProperty Name="InfoType" Relationship="Model.FK_INFO_REFERENCE_INFOTYPE" FromRole="Info" ToRole="InfoType" />
+    <NavigationProperty Name="InfoComments" Relationship="Model.FK_INFOCOMM_REFERENCE_INFO" FromRole="Info" ToRole="InfoComment" />
+  </EntityType>
+  <EntityType Name="InfoComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Info_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="CommentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CommentTime" Type="DateTime" Precision="3" />
+    <Property Name="CommentIP" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Account_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Info" Relationship="Model.FK_INFOCOMM_REFERENCE_INFO" FromRole="InfoComment" ToRole="Info" />
+  </EntityType>
+  <EntityType Name="InfoType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="OnanId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="LevelId" Type="Int32" Nullable="false" />
+    <Property Name="SortIndex" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Infoes" Relationship="Model.FK_INFO_REFERENCE_INFOTYPE" FromRole="InfoType" ToRole="Info" />
+  </EntityType>
+  <EntityType Name="Institution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionManagerAccount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Classification" Type="Int32" Nullable="false" />
+    <Property Name="Recommend" Type="Int32" />
+    <Property Name="IntroductionInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Logo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="AddressOtherInfomaition" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContactName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorNumber" Type="Int32" />
+    <Property Name="Nurses" Type="Int32" />
+    <Property Name="BusinessLicense" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Paperwork" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Contract" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProvinceCode" Type="Int64" />
+    <Property Name="CityCode" Type="Int64" />
+    <Property Name="AreaCode" Type="Int64" />
+    <Property Name="Equipment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Facility" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SpecificLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TrafficEnvironment" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="TreatmentProject" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="VideoFile" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InstitutionNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="PublicPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WebSiteUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionProperty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NearByBusLine" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="NearBySubWay" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PublicEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="WeChatAccount" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WeChatCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Procedure" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Notice" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsFirstLogin" Type="Boolean" />
+    <Property Name="IsFreeze" Type="Boolean" />
+    <Property Name="Coordinate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReservationRules" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Score" Type="Double" />
+    <NavigationProperty Name="Accounts" Relationship="Model.FK_ACCOUNT_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Account" />
+    <NavigationProperty Name="Activities" Relationship="Model.FK_Activity_Institution" FromRole="Institution" ToRole="Activity" />
+    <NavigationProperty Name="Announcements" Relationship="Model.FK_Announcement_Institution" FromRole="Institution" ToRole="Announcement" />
+    <NavigationProperty Name="Appointments" Relationship="Model.FK_Appointment_Institution" FromRole="Institution" ToRole="Appointment" />
+    <NavigationProperty Name="Attachments" Relationship="Model.FK_Attachment_Institution" FromRole="Institution" ToRole="Attachment" />
+    <NavigationProperty Name="BrowserLogs" Relationship="Model.FK_BrowserLog_Institution" FromRole="Institution" ToRole="BrowserLog" />
+    <NavigationProperty Name="Institution_Department" Relationship="Model.FK_Dept_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Institution_Department" />
+    <NavigationProperty Name="Institution_Doctor" Relationship="Model.FK_Doctor_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Institution_Doctor" />
+    <NavigationProperty Name="Institution_Indications" Relationship="Model.FK_Indi_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Institution_Indications" />
+    <NavigationProperty Name="Institution_SetTime" Relationship="Model.FK_INSTITUT_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Institution_SetTime" />
+    <NavigationProperty Name="Institution_Advantages" Relationship="Model.FK_Institution_Advantages_Institution" FromRole="Institution" ToRole="Institution_Advantages" />
+    <NavigationProperty Name="Institution_EquipmentPicture" Relationship="Model.FK_Institution_Equipment_Institution" FromRole="Institution" ToRole="Institution_EquipmentPicture" />
+    <NavigationProperty Name="Member_Complaints" Relationship="Model.FK_Member_Complaints_Institution" FromRole="Institution" ToRole="Member_Complaints" />
+    <NavigationProperty Name="Member_Evaluation" Relationship="Model.FK_Member_Evaluation_Institution" FromRole="Institution" ToRole="Member_Evaluation" />
+    <NavigationProperty Name="Institution_Scheduling" Relationship="Model.FK_Scheduling_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Institution_Scheduling" />
+    <NavigationProperty Name="Institution_Symptoms" Relationship="Model.FK_Symp_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Institution_Symptoms" />
+    <NavigationProperty Name="Institution_Treatment" Relationship="Model.FK_Treat_REFERENCE_INSTITUT" FromRole="Institution" ToRole="Institution_Treatment" />
+  </EntityType>
+  <EntityType Name="Institution_Advantages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Picture" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Institution_Advantages_Institution" FromRole="Institution_Advantages" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="Institution_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ManDept_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Appointments" Relationship="Model.FK_Appointment_Institution_Department" FromRole="Institution_Department" ToRole="Appointment" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Dept_REFERENCE_INSTITUT" FromRole="Institution_Department" ToRole="Institution" />
+    <NavigationProperty Name="Manage_Department" Relationship="Model.FK_Dept_REFERENCE_MANAGE_D" FromRole="Institution_Department" ToRole="Manage_Department" />
+    <NavigationProperty Name="Institution_Doctor_Department" Relationship="Model.FK_DoctDept_REFERENCE_Dept1" FromRole="Institution_Department" ToRole="Institution_Doctor_Department" />
+    <NavigationProperty Name="Institution_Treatment" Relationship="Model.FK_Treat_REFERENCE_Dept" FromRole="Institution_Department" ToRole="Institution_Treatment" />
+  </EntityType>
+  <EntityType Name="Institution_Doctor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobPosition" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Introduction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Educational" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="Int32" Nullable="false" />
+    <Property Name="Certificate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Graduated" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Interest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Specialty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Appointments" Relationship="Model.FK_Appointment_Institution_Doctor" FromRole="Institution_Doctor" ToRole="Appointment" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Doctor_REFERENCE_INSTITUT" FromRole="Institution_Doctor" ToRole="Institution" />
+    <NavigationProperty Name="Institution_Doctor_Department" Relationship="Model.FK_Doct_REFERENCE_Dept1" FromRole="Institution_Doctor" ToRole="Institution_Doctor_Department" />
+    <NavigationProperty Name="Institution_Doctor_Treatment" Relationship="Model.FK_DoctTreat_REFERENCE_Docto" FromRole="Institution_Doctor" ToRole="Institution_Doctor_Treatment" />
+    <NavigationProperty Name="Institution_Scheduling" Relationship="Model.FK_Scheduling_REFERENCE_Doctor" FromRole="Institution_Doctor" ToRole="Institution_Scheduling" />
+  </EntityType>
+  <EntityType Name="Institution_Doctor_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Doct_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Institution_Department" Relationship="Model.FK_DoctDept_REFERENCE_Dept1" FromRole="Institution_Doctor_Department" ToRole="Institution_Department" />
+    <NavigationProperty Name="Institution_Doctor" Relationship="Model.FK_Doct_REFERENCE_Dept1" FromRole="Institution_Doctor_Department" ToRole="Institution_Doctor" />
+    <NavigationProperty Name="Institution_Doctor_Treatment" Relationship="Model.FK_DoctTreat_REFERENCE_DoctDept" FromRole="Institution_Doctor_Department" ToRole="Institution_Doctor_Treatment" />
+  </EntityType>
+  <EntityType Name="Institution_Doctor_Treatment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Doct_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Treat_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Institution_Doctor" Relationship="Model.FK_DoctTreat_REFERENCE_Docto" FromRole="Institution_Doctor_Treatment" ToRole="Institution_Doctor" />
+    <NavigationProperty Name="Institution_Doctor_Department" Relationship="Model.FK_DoctTreat_REFERENCE_DoctDept" FromRole="Institution_Doctor_Treatment" ToRole="Institution_Doctor_Department" />
+    <NavigationProperty Name="Institution_Treatment" Relationship="Model.FK_DoctTreat_REFERENCE_Treat" FromRole="Institution_Doctor_Treatment" ToRole="Institution_Treatment" />
+  </EntityType>
+  <EntityType Name="Institution_EquipmentPicture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Introduce" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Institution_Equipment_Institution" FromRole="Institution_EquipmentPicture" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="Institution_Indications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Ins_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ManIndi_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InsTreat_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Indi_REFERENCE_INSTITUT" FromRole="Institution_Indications" ToRole="Institution" />
+    <NavigationProperty Name="Manage_Indications" Relationship="Model.FK_Indi_REFERENCE_MANAGE_I" FromRole="Institution_Indications" ToRole="Manage_Indications" />
+    <NavigationProperty Name="Institution_Treatment" Relationship="Model.FK_Indi_REFERENCE_Treat" FromRole="Institution_Indications" ToRole="Institution_Treatment" />
+    <NavigationProperty Name="Institution_Symptoms" Relationship="Model.FK_Symp_REFERENCE_Indi" FromRole="Institution_Indications" ToRole="Institution_Symptoms" />
+  </EntityType>
+  <EntityType Name="Institution_Scheduling">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="SchedulingTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Doctor_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Operator" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Scheduling_REFERENCE_INSTITUT" FromRole="Institution_Scheduling" ToRole="Institution" />
+    <NavigationProperty Name="Institution_Doctor" Relationship="Model.FK_Scheduling_REFERENCE_Doctor" FromRole="Institution_Scheduling" ToRole="Institution_Doctor" />
+  </EntityType>
+  <EntityType Name="Institution_SetTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MorningStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MorningEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MorningLimitAppointmentCount" Type="Int32" Nullable="false" />
+    <Property Name="MorningIsClosed" Type="Boolean" Nullable="false" />
+    <Property Name="NoonStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NoonEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NoonLimitAppointmentCount" Type="Int32" Nullable="false" />
+    <Property Name="NoonIsClosed" Type="Boolean" Nullable="false" />
+    <Property Name="NightStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NightEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NightLimitAppointmentCount" Type="Int32" Nullable="false" />
+    <Property Name="NightIsClosed" Type="Boolean" Nullable="false" />
+    <Property Name="EarlyCancelHour" Type="Int32" Nullable="false" />
+    <Property Name="Operator" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Appointments" Relationship="Model.FK_Appointment_Appointment" FromRole="Institution_SetTime" ToRole="Appointment" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_INSTITUT_REFERENCE_INSTITUT" FromRole="Institution_SetTime" ToRole="Institution" />
+  </EntityType>
+  <EntityType Name="Institution_Symptoms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ManSym_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InsIndi_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Symp_REFERENCE_INSTITUT" FromRole="Institution_Symptoms" ToRole="Institution" />
+    <NavigationProperty Name="Institution_Indications" Relationship="Model.FK_Symp_REFERENCE_Indi" FromRole="Institution_Symptoms" ToRole="Institution_Indications" />
+    <NavigationProperty Name="Manage_Symptoms" Relationship="Model.FK_Symp_REFERENCE_MANAGE_S" FromRole="Institution_Symptoms" ToRole="Manage_Symptoms" />
+  </EntityType>
+  <EntityType Name="Institution_Treatment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ManTreat_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InsDept_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Treat_REFERENCE_INSTITUT" FromRole="Institution_Treatment" ToRole="Institution" />
+    <NavigationProperty Name="Institution_Department" Relationship="Model.FK_Treat_REFERENCE_Dept" FromRole="Institution_Treatment" ToRole="Institution_Department" />
+    <NavigationProperty Name="Institution_Doctor_Treatment" Relationship="Model.FK_DoctTreat_REFERENCE_Treat" FromRole="Institution_Treatment" ToRole="Institution_Doctor_Treatment" />
+    <NavigationProperty Name="Institution_Indications" Relationship="Model.FK_Indi_REFERENCE_Treat" FromRole="Institution_Treatment" ToRole="Institution_Indications" />
+    <NavigationProperty Name="Manage_Treatment" Relationship="Model.FK_Treat_REFERENCE_MANAGE_T" FromRole="Institution_Treatment" ToRole="Manage_Treatment" />
+  </EntityType>
+  <EntityType Name="Manage_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Boolean" Nullable="false" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeptType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Institution_Department" Relationship="Model.FK_Dept_REFERENCE_MANAGE_D" FromRole="Manage_Department" ToRole="Institution_Department" />
+    <NavigationProperty Name="Manage_Indications" Relationship="Model.FK_MANAGE_I_REFERENCE_MANAGE_D" FromRole="Manage_Department" ToRole="Manage_Indications" />
+    <NavigationProperty Name="Manage_Symptoms" Relationship="Model.FK_MANAGE_S_REFERENCE_MANAGE_D" FromRole="Manage_Department" ToRole="Manage_Symptoms" />
+    <NavigationProperty Name="Manage_Treatment" Relationship="Model.FK_MANAGE_T_REFERENCE_MANAGE_D" FromRole="Manage_Department" ToRole="Manage_Treatment" />
+  </EntityType>
+  <EntityType Name="Manage_Indications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Treat_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Boolean" Nullable="false" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Institution_Indications" Relationship="Model.FK_Indi_REFERENCE_MANAGE_I" FromRole="Manage_Indications" ToRole="Institution_Indications" />
+    <NavigationProperty Name="Manage_Department" Relationship="Model.FK_MANAGE_I_REFERENCE_MANAGE_D" FromRole="Manage_Indications" ToRole="Manage_Department" />
+    <NavigationProperty Name="Manage_Treatment" Relationship="Model.FK_MANAGE_I_REFERENCE_MANAGE_T" FromRole="Manage_Indications" ToRole="Manage_Treatment" />
+    <NavigationProperty Name="Manage_Symptoms" Relationship="Model.FK_MANAGE_S_REFERENCE_MANAGE_I" FromRole="Manage_Indications" ToRole="Manage_Symptoms" />
+  </EntityType>
+  <EntityType Name="Manage_Symptoms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Treat_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Indi_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Boolean" Nullable="false" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Source" Type="Int32" Nullable="false" />
+    <Property Name="IsAudit" Type="Boolean" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Institution_Symptoms" Relationship="Model.FK_Symp_REFERENCE_MANAGE_S" FromRole="Manage_Symptoms" ToRole="Institution_Symptoms" />
+    <NavigationProperty Name="Manage_Department" Relationship="Model.FK_MANAGE_S_REFERENCE_MANAGE_D" FromRole="Manage_Symptoms" ToRole="Manage_Department" />
+    <NavigationProperty Name="Manage_Indications" Relationship="Model.FK_MANAGE_S_REFERENCE_MANAGE_I" FromRole="Manage_Symptoms" ToRole="Manage_Indications" />
+    <NavigationProperty Name="Manage_Treatment" Relationship="Model.FK_MANAGE_S_REFERENCE_MANAGE_T" FromRole="Manage_Symptoms" ToRole="Manage_Treatment" />
+  </EntityType>
+  <EntityType Name="Manage_Treatment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="Boolean" Nullable="false" />
+    <Property Name="Account_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Institution_Treatment" Relationship="Model.FK_Treat_REFERENCE_MANAGE_T" FromRole="Manage_Treatment" ToRole="Institution_Treatment" />
+    <NavigationProperty Name="Manage_Department" Relationship="Model.FK_MANAGE_T_REFERENCE_MANAGE_D" FromRole="Manage_Treatment" ToRole="Manage_Department" />
+    <NavigationProperty Name="Manage_Indications" Relationship="Model.FK_MANAGE_I_REFERENCE_MANAGE_T" FromRole="Manage_Treatment" ToRole="Manage_Indications" />
+    <NavigationProperty Name="Manage_Symptoms" Relationship="Model.FK_MANAGE_S_REFERENCE_MANAGE_T" FromRole="Manage_Treatment" ToRole="Manage_Symptoms" />
+  </EntityType>
+  <EntityType Name="ManagerRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RoleToModules" Relationship="Model.FK_RoleToModel_ManagerRoles" FromRole="ManagerRole" ToRole="RoleToModule" />
+    <NavigationProperty Name="Managers" Relationship="Model.ManagersToManagerRoles" FromRole="ManagerRole" ToRole="Manager" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManagerAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ManagerPassword" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsReadOnly" Type="Boolean" />
+    <Property Name="LastVisitTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ManagerRoles" Relationship="Model.ManagersToManagerRoles" FromRole="Manager" ToRole="ManagerRole" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Account_id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IDCard" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="WorkUnit" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ProvinceCode" Type="Int64" />
+    <Property Name="CityCode" Type="Int64" />
+    <Property Name="AreaCode" Type="Int64" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nickname" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="HeadPortrait" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MemberNo" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="Points" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="MemberLevel" Type="Int32" />
+    <Property Name="IsAudit" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Reviewer" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AuditTime" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="OperatTime" Type="DateTime" Precision="3" />
+    <Property Name="FreezeStartTime" Type="DateTime" Precision="3" />
+    <Property Name="FreezeEndTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Account" Relationship="Model.FK_MEMBER_REFERENCE_ACCOUNT" FromRole="Member" ToRole="Account" />
+    <NavigationProperty Name="Appointments" Relationship="Model.FK_Appointment_Member" FromRole="Member" ToRole="Appointment" />
+    <NavigationProperty Name="Member_Advisory" Relationship="Model.FK_MEMBER_A_REFERENCE_MEMBER" FromRole="Member" ToRole="Member_Advisory" />
+    <NavigationProperty Name="Member_Complaints" Relationship="Model.FK_MEMBER_C_REFERENCE_MEMBER" FromRole="Member" ToRole="Member_Complaints" />
+    <NavigationProperty Name="Member_Evaluation" Relationship="Model.FK_MEMBER_E_REFERENCE_MEMBER" FromRole="Member" ToRole="Member_Evaluation" />
+    <NavigationProperty Name="Member_Patient" Relationship="Model.FK_MEMBER_P_REFERENCE_MEMBER" FromRole="Member" ToRole="Member_Patient" />
+    <NavigationProperty Name="Member_Points" Relationship="Model.FK_Member_Points_Member" FromRole="Member" ToRole="Member_Points" />
+  </EntityType>
+  <EntityType Name="Member_Advisory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MemberName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsReply" Type="Boolean" />
+    <Property Name="ReplyDate" Type="DateTime" Precision="3" />
+    <Property Name="ReplyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Member" Relationship="Model.FK_MEMBER_A_REFERENCE_MEMBER" FromRole="Member_Advisory" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="Member_BackgroundImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="BackgroundImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TwoDimenCodeImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Member_Complaints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Ins_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ComplaintsNo" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MemberName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsHandle" Type="Boolean" />
+    <Property Name="HandleDate" Type="DateTime" Precision="3" />
+    <Property Name="HandleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Appointment" Relationship="Model.FK_Member_Complaints_Appointment" FromRole="Member_Complaints" ToRole="Appointment" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Member_Complaints_Institution" FromRole="Member_Complaints" ToRole="Institution" />
+    <NavigationProperty Name="Member" Relationship="Model.FK_MEMBER_C_REFERENCE_MEMBER" FromRole="Member_Complaints" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="Member_Evaluation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Ins_Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="WaitingTime" Type="Int32" Nullable="false" />
+    <Property Name="Efficacy" Type="Int32" Nullable="false" />
+    <Property Name="Attitude" Type="Int32" Nullable="false" />
+    <Property Name="Experience" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="GuidDoctorService" Type="Int32" Nullable="false" />
+    <Property Name="MemberUseful" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Appointment" Relationship="Model.FK_Member_Evaluation_Appointment" FromRole="Member_Evaluation" ToRole="Appointment" />
+    <NavigationProperty Name="Institution" Relationship="Model.FK_Member_Evaluation_Institution" FromRole="Member_Evaluation" ToRole="Institution" />
+    <NavigationProperty Name="Member" Relationship="Model.FK_MEMBER_E_REFERENCE_MEMBER" FromRole="Member_Evaluation" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="Member_Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsRead" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member_Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Relationship" Type="Int32" />
+    <Property Name="IDCard" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ProvinceID" Type="Int64" />
+    <Property Name="CityID" Type="Int64" />
+    <Property Name="AreaID" Type="Int64" />
+    <Property Name="MedicareCard" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberNo" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="IsDel" Type="Int32" />
+    <NavigationProperty Name="Member" Relationship="Model.FK_MEMBER_P_REFERENCE_MEMBER" FromRole="Member_Patient" ToRole="Member" />
+    <NavigationProperty Name="Appointments" Relationship="Model.AppointmentsPatients" FromRole="Member_Patient" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="Member_Points">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="PointsTypeID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Scores" Type="Int32" />
+    <Property Name="CurrentPoints" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MemberNo" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Member" Relationship="Model.FK_Member_Points_Member" FromRole="Member_Points" ToRole="Member" />
+    <NavigationProperty Name="Points_Type" Relationship="Model.FK_MEMBER_P_REFERENCE_POINTS_T" FromRole="Member_Points" ToRole="Points_Type" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="ParentMenuId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenuICO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenuUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MenuType" Type="Int32" />
+    <Property Name="MenuOrder" Type="Int32" />
+    <Property Name="IsSystem" Type="Boolean" />
+    <Property Name="IsVisible" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RoleToModules" Relationship="Model.FK_RoleToModel_Module" FromRole="Module" ToRole="RoleToModule" />
+  </EntityType>
+  <EntityType Name="OrdersMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="TypeId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentNo" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InsId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="InsIsRead" Type="Boolean" />
+    <Property Name="MemberIsRead" Type="Boolean" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsHandle" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InsUpdated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="OrdersMessage_Manager" Relationship="Model.FK_ORDERSME_REFERENCE_Manager" FromRole="OrdersMessage" ToRole="OrdersMessage_Manager" />
+    <NavigationProperty Name="OrdersMessage_Type" Relationship="Model.FK_ORDERSME_REFERENCE_ORDERSME" FromRole="OrdersMessage" ToRole="OrdersMessage_Type" />
+  </EntityType>
+  <EntityType Name="OrdersMessage_Manager">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MessageId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" />
+    <Property Name="IsRead" Type="Boolean" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="OrdersMessage" Relationship="Model.FK_ORDERSME_REFERENCE_Manager" FromRole="OrdersMessage_Manager" ToRole="OrdersMessage" />
+  </EntityType>
+  <EntityType Name="OrdersMessage_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="TypeName" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OrdersMessages" Relationship="Model.FK_ORDERSME_REFERENCE_ORDERSME" FromRole="OrdersMessage_Type" ToRole="OrdersMessage" />
+  </EntityType>
+  <EntityType Name="Points_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="PointsType" Type="Int32" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Scores" Type="Int32" />
+    <NavigationProperty Name="Member_Points" Relationship="Model.FK_MEMBER_P_REFERENCE_POINTS_T" FromRole="Points_Type" ToRole="Member_Points" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ReservationCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="AppointmentID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="PatientID" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="MemberID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="INS_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="RCode" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RoleToModule">
+    <Key>
+      <PropertyRef Name="ManagerRoleId" />
+      <PropertyRef Name="ModuleId" />
+    </Key>
+    <Property Name="ManagerRoleId" Type="Int32" Nullable="false" />
+    <Property Name="ModuleId" Type="Int32" Nullable="false" />
+    <Property Name="HasPermission" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ManagerRole" Relationship="Model.FK_RoleToModel_ManagerRoles" FromRole="RoleToModule" ToRole="ManagerRole" />
+    <NavigationProperty Name="Module" Relationship="Model.FK_RoleToModel_Module" FromRole="RoleToModule" ToRole="Module" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SysGuidence">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NodeName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="SortIndex" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="Action" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="RoleType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VerificationRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationCode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="SourceID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="SendTime" Type="DateTime" Precision="3" />
+    <Property Name="VerificationTime" Type="DateTime" Precision="3" />
+    <Property Name="VerificationType" Type="Int32" />
+    <Property Name="Results" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NoTemplateRecord">
+    <Key>
+      <PropertyRef Name="TypeCode" />
+      <PropertyRef Name="CurrentIndex" />
+    </Key>
+    <Property Name="TypeCode" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CurrentIndex" Type="Int32" Nullable="false" />
+    <Property Name="LastGetTime" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_ACCOUNT_REFERENCE_CARD">
+    <End Type="Model.Card" Role="Card" Multiplicity="0..1" />
+    <End Type="Model.Account" Role="Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Card">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Card_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACCOUNT_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="0..1" />
+    <End Type="Model.Account" Role="Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Institution_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BrowserLog_Account">
+    <End Type="Model.Account" Role="Account" Multiplicity="1" />
+    <End Type="Model.BrowserLog" Role="BrowserLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BrowserLog">
+        <PropertyRef Name="accountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_REFERENCE_ACCOUNT">
+    <End Type="Model.Account" Role="Account" Multiplicity="1" />
+    <End Type="Model.Member" Role="Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="Account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Activity_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Activity" Role="Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ADVERTIS_REFERENCE_ADVERTISTYPE1">
+    <End Type="Model.Advertisement_Type" Role="Advertisement_Type" Multiplicity="0..1" />
+    <End Type="Model.Advertisement" Role="Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Advertisement_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="ADTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ADVERTIS1_REFERENCE_ADVERTIS3">
+    <End Type="Model.Advertising" Role="Advertising" Multiplicity="1" />
+    <End Type="Model.Advertisement" Role="Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Advertising">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="AD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Announcement_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Announcement" Role="Announcement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Announcement">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Appointment">
+    <End Type="Model.Institution_SetTime" Role="Institution_SetTime" Multiplicity="0..1" />
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_SetTime">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="SetTimeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_AppointmentStatus">
+    <End Type="Model.AppointmentStatu" Role="AppointmentStatu" Multiplicity="1" />
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppointmentStatu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="State" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Card">
+    <End Type="Model.Card" Role="Card" Multiplicity="0..1" />
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Card">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="CardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Institution_Department">
+    <End Type="Model.Institution_Department" Role="Institution_Department" Multiplicity="0..1" />
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Institution_Doctor">
+    <End Type="Model.Institution_Doctor" Role="Institution_Doctor" Multiplicity="0..1" />
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Member">
+    <End Type="Model.Member" Role="Member" Multiplicity="1" />
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Complaints_Appointment">
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="1" />
+    <End Type="Model.Member_Complaints" Role="Member_Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Complaints">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Evaluation_Appointment">
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="1" />
+    <End Type="Model.Member_Evaluation" Role="Member_Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Evaluation">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachment_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="0..1" />
+    <End Type="Model.Attachment" Role="Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BrowserLog_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.BrowserLog" Role="BrowserLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BrowserLog">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DATADICT_REFERENCE_DATADICT">
+    <End Type="Model.DataDictionaryType" Role="DataDictionaryType" Multiplicity="1" />
+    <End Type="Model.DataDictionary" Role="DataDictionary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataDictionaryType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="DataDictionary">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HELPCENT_REFERENCE_HELPCENT">
+    <End Type="Model.HelpCenterType" Role="HelpCenterType" Multiplicity="1" />
+    <End Type="Model.HelpCenter" Role="HelpCenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HelpCenterType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HelpCenter">
+        <PropertyRef Name="HelpCenterType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INFO_REFERENCE_INFOTYPE">
+    <End Type="Model.InfoType" Role="InfoType" Multiplicity="1" />
+    <End Type="Model.Info" Role="Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Info">
+        <PropertyRef Name="InfoType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INFOCOMM_REFERENCE_INFO">
+    <End Type="Model.Info" Role="Info" Multiplicity="1" />
+    <End Type="Model.InfoComment" Role="InfoComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoComment">
+        <PropertyRef Name="Info_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dept_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Institution_Department" Role="Institution_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Department">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Institution_Doctor" Role="Institution_Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Doctor">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Indi_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="0..1" />
+    <End Type="Model.Institution_Indications" Role="Institution_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Indications">
+        <PropertyRef Name="Ins_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSTITUT_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="0..1" />
+    <End Type="Model.Institution_SetTime" Role="Institution_SetTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_SetTime">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institution_Advantages_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Institution_Advantages" Role="Institution_Advantages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Advantages">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institution_Equipment_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Institution_EquipmentPicture" Role="Institution_EquipmentPicture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_EquipmentPicture">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Complaints_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Member_Complaints" Role="Member_Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Complaints">
+        <PropertyRef Name="Ins_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Evaluation_Institution">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Member_Evaluation" Role="Member_Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Evaluation">
+        <PropertyRef Name="Ins_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scheduling_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Institution_Scheduling" Role="Institution_Scheduling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Scheduling">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symp_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Institution_Symptoms" Role="Institution_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Symptoms">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treat_REFERENCE_INSTITUT">
+    <End Type="Model.Institution" Role="Institution" Multiplicity="1" />
+    <End Type="Model.Institution_Treatment" Role="Institution_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Institution_Treatment">
+        <PropertyRef Name="INS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dept_REFERENCE_MANAGE_D">
+    <End Type="Model.Manage_Department" Role="Manage_Department" Multiplicity="1" />
+    <End Type="Model.Institution_Department" Role="Institution_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Department">
+        <PropertyRef Name="ManDept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctDept_REFERENCE_Dept1">
+    <End Type="Model.Institution_Department" Role="Institution_Department" Multiplicity="1" />
+    <End Type="Model.Institution_Doctor_Department" Role="Institution_Doctor_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Department">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treat_REFERENCE_Dept">
+    <End Type="Model.Institution_Department" Role="Institution_Department" Multiplicity="1" />
+    <End Type="Model.Institution_Treatment" Role="Institution_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Treatment">
+        <PropertyRef Name="InsDept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doct_REFERENCE_Dept1">
+    <End Type="Model.Institution_Doctor" Role="Institution_Doctor" Multiplicity="1" />
+    <End Type="Model.Institution_Doctor_Department" Role="Institution_Doctor_Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Department">
+        <PropertyRef Name="Doct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctTreat_REFERENCE_Docto">
+    <End Type="Model.Institution_Doctor" Role="Institution_Doctor" Multiplicity="1" />
+    <End Type="Model.Institution_Doctor_Treatment" Role="Institution_Doctor_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Treatment">
+        <PropertyRef Name="Doct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scheduling_REFERENCE_Doctor">
+    <End Type="Model.Institution_Doctor" Role="Institution_Doctor" Multiplicity="1" />
+    <End Type="Model.Institution_Scheduling" Role="Institution_Scheduling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Scheduling">
+        <PropertyRef Name="Doctor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctTreat_REFERENCE_DoctDept">
+    <End Type="Model.Institution_Doctor_Department" Role="Institution_Doctor_Department" Multiplicity="1" />
+    <End Type="Model.Institution_Doctor_Treatment" Role="Institution_Doctor_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Doctor_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Treatment">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctTreat_REFERENCE_Treat">
+    <End Type="Model.Institution_Treatment" Role="Institution_Treatment" Multiplicity="1" />
+    <End Type="Model.Institution_Doctor_Treatment" Role="Institution_Doctor_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Doctor_Treatment">
+        <PropertyRef Name="Treat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Indi_REFERENCE_MANAGE_I">
+    <End Type="Model.Manage_Indications" Role="Manage_Indications" Multiplicity="1" />
+    <End Type="Model.Institution_Indications" Role="Institution_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Indications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Indications">
+        <PropertyRef Name="ManIndi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Indi_REFERENCE_Treat">
+    <End Type="Model.Institution_Treatment" Role="Institution_Treatment" Multiplicity="1" />
+    <End Type="Model.Institution_Indications" Role="Institution_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Indications">
+        <PropertyRef Name="InsTreat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symp_REFERENCE_Indi">
+    <End Type="Model.Institution_Indications" Role="Institution_Indications" Multiplicity="1" />
+    <End Type="Model.Institution_Symptoms" Role="Institution_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institution_Indications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Symptoms">
+        <PropertyRef Name="InsIndi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symp_REFERENCE_MANAGE_S">
+    <End Type="Model.Manage_Symptoms" Role="Manage_Symptoms" Multiplicity="1" />
+    <End Type="Model.Institution_Symptoms" Role="Institution_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Symptoms">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Symptoms">
+        <PropertyRef Name="ManSym_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treat_REFERENCE_MANAGE_T">
+    <End Type="Model.Manage_Treatment" Role="Manage_Treatment" Multiplicity="1" />
+    <End Type="Model.Institution_Treatment" Role="Institution_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Institution_Treatment">
+        <PropertyRef Name="ManTreat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_I_REFERENCE_MANAGE_D">
+    <End Type="Model.Manage_Department" Role="Manage_Department" Multiplicity="1" />
+    <End Type="Model.Manage_Indications" Role="Manage_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Indications">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_S_REFERENCE_MANAGE_D">
+    <End Type="Model.Manage_Department" Role="Manage_Department" Multiplicity="1" />
+    <End Type="Model.Manage_Symptoms" Role="Manage_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Symptoms">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_T_REFERENCE_MANAGE_D">
+    <End Type="Model.Manage_Department" Role="Manage_Department" Multiplicity="1" />
+    <End Type="Model.Manage_Treatment" Role="Manage_Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Treatment">
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_I_REFERENCE_MANAGE_T">
+    <End Type="Model.Manage_Treatment" Role="Manage_Treatment" Multiplicity="1" />
+    <End Type="Model.Manage_Indications" Role="Manage_Indications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Indications">
+        <PropertyRef Name="Treat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_S_REFERENCE_MANAGE_I">
+    <End Type="Model.Manage_Indications" Role="Manage_Indications" Multiplicity="1" />
+    <End Type="Model.Manage_Symptoms" Role="Manage_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Indications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Symptoms">
+        <PropertyRef Name="Indi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MANAGE_S_REFERENCE_MANAGE_T">
+    <End Type="Model.Manage_Treatment" Role="Manage_Treatment" Multiplicity="1" />
+    <End Type="Model.Manage_Symptoms" Role="Manage_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manage_Treatment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manage_Symptoms">
+        <PropertyRef Name="Treat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToModel_ManagerRoles">
+    <End Type="Model.ManagerRole" Role="ManagerRole" Multiplicity="1" />
+    <End Type="Model.RoleToModule" Role="RoleToModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagerRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleToModule">
+        <PropertyRef Name="ManagerRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_A_REFERENCE_MEMBER">
+    <End Type="Model.Member" Role="Member" Multiplicity="1" />
+    <End Type="Model.Member_Advisory" Role="Member_Advisory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Advisory">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_C_REFERENCE_MEMBER">
+    <End Type="Model.Member" Role="Member" Multiplicity="1" />
+    <End Type="Model.Member_Complaints" Role="Member_Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Complaints">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_E_REFERENCE_MEMBER">
+    <End Type="Model.Member" Role="Member" Multiplicity="1" />
+    <End Type="Model.Member_Evaluation" Role="Member_Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Evaluation">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_P_REFERENCE_MEMBER">
+    <End Type="Model.Member" Role="Member" Multiplicity="1" />
+    <End Type="Model.Member_Patient" Role="Member_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Patient">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Points_Member">
+    <End Type="Model.Member" Role="Member" Multiplicity="1" />
+    <End Type="Model.Member_Points" Role="Member_Points" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Points">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_P_REFERENCE_POINTS_T">
+    <End Type="Model.Points_Type" Role="Points_Type" Multiplicity="1" />
+    <End Type="Model.Member_Points" Role="Member_Points" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Points_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member_Points">
+        <PropertyRef Name="PointsTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToModel_Module">
+    <End Type="Model.Module" Role="Module" Multiplicity="1" />
+    <End Type="Model.RoleToModule" Role="RoleToModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleToModule">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERSME_REFERENCE_Manager">
+    <End Type="Model.OrdersMessage" Role="OrdersMessage" Multiplicity="0..1" />
+    <End Type="Model.OrdersMessage_Manager" Role="OrdersMessage_Manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdersMessage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrdersMessage_Manager">
+        <PropertyRef Name="MessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERSME_REFERENCE_ORDERSME">
+    <End Type="Model.OrdersMessage_Type" Role="OrdersMessage_Type" Multiplicity="0..1" />
+    <End Type="Model.OrdersMessage" Role="OrdersMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdersMessage_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrdersMessage">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AppointmentsPatients">
+    <End Type="Model.Appointment" Role="Appointment" Multiplicity="*" />
+    <End Type="Model.Member_Patient" Role="Member_Patient" Multiplicity="*" />
+  </Association>
+  <Association Name="ManagersToManagerRoles">
+    <End Type="Model.ManagerRole" Role="ManagerRole" Multiplicity="*" />
+    <End Type="Model.Manager" Role="Manager" Multiplicity="*" />
+  </Association>
+</Schema>
