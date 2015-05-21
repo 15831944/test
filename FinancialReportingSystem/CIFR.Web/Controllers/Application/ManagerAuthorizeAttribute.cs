@@ -20,7 +20,8 @@ namespace CIFR.Web
 
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            HttpContext.Current.Response.Redirect("/Administration/Login", true);
+
+            HttpContext.Current.Response.Redirect("/Administration/Login11", true);
         }
     }
 }
